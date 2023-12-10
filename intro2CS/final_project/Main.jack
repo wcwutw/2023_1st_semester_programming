@@ -2,7 +2,20 @@ class Main{
 	function void Main() {
 		//call other function
 		//variable set
-
-
+		while(True) {
+			let start_game=Keyboard.keyPressed();
+			while(start_game = 0) {
+				start_game=Keyboard.keyPressed();
+			}
+			//set screen into game mode
+			//game initialization
+			let Pile_1= //Pile_1
+			let Pile_2= //Pile_2
+			while( (~(Pile_1=0)) & (~(Pile_2=0))) {
+				
+			}
+			
+		}
+		return;
 	}
 }

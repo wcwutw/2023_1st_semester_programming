@@ -1,0 +1,7 @@
+class Gameset{
+	constructor Gameset new(Pile player1, Pile player2, Pile common) {
+		
+		return this;
+	}
+
+}

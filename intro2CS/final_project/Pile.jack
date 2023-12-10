@@ -1,0 +1,16 @@
+class Pile{
+	field List arr;
+	constructor Pile New(int num_card) {
+		arr.dispose();
+		//arr.new(0, null);
+		//initial 26 or 0 card
+		return this;
+	}
+	method void shuffle() {
+		
+	}
+	method void add_card(card add) {
+		arr.push_front();
+		arr.shuffle();
+	}
+}
