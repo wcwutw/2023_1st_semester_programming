@@ -1,0 +1,54 @@
+function Tool.asciiCode 1
+push constant 1
+call String.new 1
+push constant 32
+call String.appendChar 2
+pop local 0
+push local 0
+push constant 0
+push argument 0
+call String.setCharAt 3
+pop temp 0
+push local 0
+push constant 0
+call String.charAt 2
+return
+function Tool.mod 0
+label WHILE_EXP0
+push argument 0
+push argument 1
+lt
+not
+not
+if-goto WHILE_END0
+push argument 0
+push argument 1
+sub
+pop argument 0
+goto WHILE_EXP0
+label WHILE_END0
+push argument 0
+return
+function Tool.rnd 3
+call Random.rand 0
+pop local 0
+push argument 1
+push argument 0
+sub
+pop local 2
+push local 0
+push argument 1
+push argument 0
+sub
+push constant 1
+add
+call Tool.mod 2
+pop local 1
+push local 1
+push argument 0
+add
+pop local 0
+push local 0
+push local 1
+add
+return

@@ -6,11 +6,11 @@ class List{
 		let next=cdr;
 		return this;
 	}
-	method void push_front(int val) {
-		List temp=next;
-		next=List.new(val, temp);
-		return;
-	}
+	//method void push_front(int val) {
+	//	List temp=next;
+	//	next=List.new(val, temp);
+	//	return;
+	//}
 	method void dispose() {
 		if(~(next=null)) {
 			do next.dispose();

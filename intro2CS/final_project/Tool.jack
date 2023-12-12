@@ -19,9 +19,13 @@ class Tool{
 	
 	//randomize a number in [l, r]
 	function int rnd(int l, int r) {
-		var int ret=l, tmp=0;
-		tmp=Random.randRange(r-l);
-		ret=ret+tmp;
-		return ret;
+		var int ret;
+		var int tmp;
+		var int ran;
+		let ret=Random.rand();
+		let ran=r-l;
+		let tmp=Tool.mod(ret, r-l+1);
+		let ret=tmp+l;
+		return ret+tmp;
 	}
 }
