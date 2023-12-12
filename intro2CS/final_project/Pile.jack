@@ -1,16 +1,45 @@
 class Pile{
-	field List arr;
-	constructor Pile New(int num_card) {
-		arr.dispose();
-		//arr.new(0, null);
-		//initial 26 or 0 card
+	field Array arr;
+	field int arr_sz;
+	field int rem;
+	field int shuffle_times;
+	field int left_id;
+	field int right_id;
+	field int swap_tmp;
+	constructor Pile New() {
+		//return null list;
+		do arr.dispose();
+		do arr.new(52);
+		let arr_sz=0;
 		return this;
 	}
-	method void shuffle() {
-		
+	method void add_card(int add) {
+		let arr[arr_sz]=add;
+		let arr_sz=arr_sz+1;
+		return;
 	}
-	method void add_card(card add) {
-		arr.push_front();
-		arr.shuffle();
+	method int remove_card() {
+		let arr_sz = arr_sz - 1;
+		let rem=arr[arr_sz];
+		return rem;
+	}
+	method void move_pile() { //put into game_set
+		return;
+	}
+	method void shuffle_pile() {
+		let shuffle_times=Random.rand();
+		let shuffle_times=Tool.mod(shuffle_times, arr_sz);
+		while(shuffle_times>0) {
+			let shuffle_times = shuffle_times - 1;
+			let left_id=Random.rand();
+			let left_id=Tool.mod(left_id, arr_sz);
+			let right_id=Random.rand();
+			let right_id=Tool.mod(right_id, arr_sz);
+			//swap left and right
+			let swap_tmp=arr[left_id];
+			let arr[left_id]=arr[right_id];
+			let arr[right_id]=swap_tmp;
+		}
+		return;
 	}
 }
