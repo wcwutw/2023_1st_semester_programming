@@ -6,7 +6,7 @@ class Pile{
 	field int left_id;
 	field int right_id;
 	field int swap_tmp;
-	constructor Pile New() {
+	constructor Pile new() {
 		//return null list;
 		do arr.dispose();
 		do arr.new(52);
@@ -23,7 +23,18 @@ class Pile{
 		let rem=arr[arr_sz];
 		return rem;
 	}
-	method void move_pile() { //put into game_set
+	method Array getArr() {
+		return arr;
+	}
+	method int getSZ() {
+		return arr_sz;
+	}
+	method int getback() {
+		return arr[arr_sz-1];
+	}
+	method void popback() {
+		let arr[arr_sz-1]=0;
+		let arr_sz=arr_sz-1;
 		return;
 	}
 	method void shuffle_pile() {

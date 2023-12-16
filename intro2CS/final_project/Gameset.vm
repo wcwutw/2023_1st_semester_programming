@@ -1,0 +1,110 @@
+function Gameset.new 0
+push constant 6
+call Memory.alloc 1
+pop pointer 0
+push constant 52
+pop this 3
+call Pile.new 0
+pop temp 0
+label WHILE_EXP0
+push this 3
+push constant 0
+eq
+not
+not
+if-goto WHILE_END0
+call Random.rand 0
+pop this 4
+push this 4
+push constant 2
+call Tool.mod 2
+pop this 4
+push this 4
+push constant 1
+eq
+push this 1
+call Pile.getSZ 1
+push constant 26
+eq
+not
+and
+push this 0
+call Pile.getSZ 1
+push constant 26
+eq
+or
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 1
+push this 3
+call Pile.add_card 2
+pop temp 0
+goto IF_END0
+label IF_FALSE0
+push this 0
+push this 3
+call Pile.add_card 2
+pop temp 0
+label IF_END0
+push this 3
+push constant 5
+call Math.multiply 2
+push constant 1
+add
+call Random.setSeed 1
+pop temp 0
+push this 3
+push constant 1
+sub
+pop this 3
+goto WHILE_EXP0
+label WHILE_END0
+call player1.shuffle_pile 0
+pop temp 0
+call player2.shuffle_pile 0
+pop temp 0
+push pointer 0
+return
+function Gameset.move_pile 0
+push argument 0
+pop pointer 0
+push this 2
+call Pile.getSZ 1
+pop this 5
+label WHILE_EXP0
+push this 5
+push constant 0
+eq
+not
+not
+if-goto WHILE_END0
+push argument 1
+push constant 1
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 0
+push this 2
+call Pile.getback 1
+call Pile.add_card 2
+pop temp 0
+goto IF_END0
+label IF_FALSE0
+push this 1
+push this 2
+call Pile.getback 1
+call Pile.add_card 2
+pop temp 0
+label IF_END0
+push this 2
+call Pile.popback 1
+pop temp 0
+push this 2
+call Pile.getSZ 1
+pop this 5
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return

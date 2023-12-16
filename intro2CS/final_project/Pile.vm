@@ -1,4 +1,4 @@
-function Pile.New 0
+function Pile.new 0
 push constant 7
 call Memory.alloc 1
 pop pointer 0
@@ -45,9 +45,44 @@ push that 0
 pop this 2
 push this 2
 return
-function Pile.move_pile 0
+function Pile.getArr 0
 push argument 0
 pop pointer 0
+push this 0
+return
+function Pile.getSZ 0
+push argument 0
+pop pointer 0
+push this 1
+return
+function Pile.getback 0
+push argument 0
+pop pointer 0
+push this 1
+push constant 1
+sub
+push this 0
+add
+pop pointer 1
+push that 0
+return
+function Pile.popback 0
+push argument 0
+pop pointer 0
+push this 1
+push constant 1
+sub
+push this 0
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push this 1
+push constant 1
+sub
+pop this 1
 push constant 0
 return
 function Pile.shuffle_pile 0
