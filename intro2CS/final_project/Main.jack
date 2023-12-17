@@ -2,19 +2,105 @@ class Main{
 	function void Main() {
 		//call other function
 		//variable set
-		while(True) {
+		var char input_char;
+		var int input_ascii;
+		var int info;
+		var int pile1_cnt;
+		var int pile2_cnt;
+		var int common_cnt;
+		var int start_game;
+		var int round_count;
+		var int game_end;
+		var int cur_player;
+		var Gameset game;
+		var Pile temp_pile;
+		while(1) {
 			let start_game=Keyboard.keyPressed();
 			while(start_game = 0) {
-				start_game=Keyboard.keyPressed();
+				let start_game=Keyboard.keyPressed();
 			}
 			//set screen into game mode
-			//game initialization
-			let Pile_1= //Pile_1
-			let Pile_2= //Pile_2
-			while( (~(Pile_1=0)) & (~(Pile_2=0))) {
-				
+			//game initialization, reset variables
+			let game=Gameset.new(); //
+			let cur_player=1; //player 1 or 2
+			let round_count=1; //1~13
+			let game_end=0;
+			while(game_end=0) {
+				let input_char=Keyboard.readChar();
+				let input_ascii=Tool.asciiCode(input_char);
+				if(cur_player=1) {
+					while(~(input_ascii=68)) {
+						let input_char=Keyboard.readChar();
+						let input_ascii=Tool.asciiCode(input_char);
+					}
+					//wait for D pressed
+					do game.removeTopCard(1);
+					//move top card in Pile_1 to Common_pile
+				}
+				else {
+					while(~(input_ascii=74)) { //38
+						let input_char=Keyboard.readChar();
+						let input_ascii=Tool.asciiCode(input_char);
+					}
+					//wait for J pressed
+					do game.removeTopCard(2);
+					//move top card in Pile_2 to Common_pile
+				}
+				let temp_pile=game.getCommon();
+				let info=temp_pile.getback();
+				if(Tool.mod(info, 13)+1=round_count) {
+					let input_char=Keyboard.readChar();
+					let input_ascii=Tool.asciiCode(input_char);
+					while(~(input_ascii=65 | input_ascii=68 | input_ascii=76 | input_ascii=74)) {
+						let input_char=Keyboard.readChar();
+						let input_ascii=Tool.asciiCode(input_char);
+					}
+					//wait for A/L/D/J pressed
+					if(input_ascii=65) {
+						do game.movePile(2);
+						//clear Common_pile to Pile_2
+						do game.shuffleAll();
+						//random shuffle Pile_2
+					}
+					if(input_ascii=76) {
+						do game.movePile(1);
+						//clear Common_pile to Pile_1
+						do game.shuffleAll();
+						//random shuffle Pile_1
+					}
+					//if D/J is pressed accidentally
+					let round_count=1;
+					if(input_ascii=68) {
+						do game.movePile(1);
+						//clear Common_pile to Pile_1
+						do game.shuffleAll();
+						//random shuffle Pile_1
+					}
+					if(input_ascii=74) {
+						do game.movePile(2);
+						//clear Common_pile to Pile_2
+						do game.shuffleAll();
+						//random shuffle Pile_2
+					}
+				}
+				else {
+					let round_count=round_count+1
+					if(round_count>13) let round_count=round_count-13;
+				}
+				let pile1_cnt=game.getPile1().getSZ();
+				let pile2_cnt=game.getPile2().getSZ();
+				let common_cnt=game.getcommon().getSZ();
+				//update both Pile_count
+				//draw something
+				//show Pile_count, round_count
+				let cur_player=3-cur_player;
+				if(Pile1_count=0 | Pile2_count=0) let game_end=1;
+				//game_end->play final round? if have time i can implement this part
+				//middle=full but game not end			
 			}
-			
+			if(pile1_count=0) //show player_1 win
+			if(pile2_count=0) //show player_2 win
+			do sys.wait(5000); //5000ms
 		}
 		return;
 	}

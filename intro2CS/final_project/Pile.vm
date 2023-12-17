@@ -13,7 +13,7 @@ push constant 0
 pop this 1
 push pointer 0
 return
-function Pile.add_card 0
+function Pile.addCard 0
 push argument 0
 pop pointer 0
 push this 1
@@ -30,7 +30,7 @@ add
 pop this 1
 push constant 0
 return
-function Pile.remove_card 0
+function Pile.removeCard 0
 push argument 0
 pop pointer 0
 push this 1
@@ -85,7 +85,21 @@ sub
 pop this 1
 push constant 0
 return
-function Pile.shuffle_pile 0
+function Pile.clearPile 0
+push argument 0
+pop pointer 0
+push this 0
+call Array.dispose 1
+pop temp 0
+push this 0
+push constant 52
+call Array.new 2
+pop temp 0
+push constant 0
+pop this 1
+push constant 0
+return
+function Pile.shufflePile 0
 push argument 0
 pop pointer 0
 call Random.rand 0

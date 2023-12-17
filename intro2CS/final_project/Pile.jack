@@ -13,12 +13,12 @@ class Pile{
 		let arr_sz=0;
 		return this;
 	}
-	method void add_card(int add) {
+	method void addCard(int add) {
 		let arr[arr_sz]=add;
 		let arr_sz=arr_sz+1;
 		return;
 	}
-	method int remove_card() {
+	method int removeCard() {
 		let arr_sz = arr_sz - 1;
 		let rem=arr[arr_sz];
 		return rem;
@@ -37,7 +37,13 @@ class Pile{
 		let arr_sz=arr_sz-1;
 		return;
 	}
-	method void shuffle_pile() {
+	method void clearPile() {
+		do arr.dispose();
+		do arr.new(52);
+		let arr_sz=0;
+		return;
+	}
+	method void shufflePile() {
 		let shuffle_times=Random.rand();
 		let shuffle_times=Tool.mod(shuffle_times, arr_sz);
 		while(shuffle_times>0) {

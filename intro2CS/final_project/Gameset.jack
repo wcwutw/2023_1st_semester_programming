@@ -7,38 +7,66 @@ class Gameset{
 	field int sz;
 	constructor Gameset new() {
 		let i=52;
-		do Pile.new();
+		let player_1=Pile.new();
+		let player_2=Pile.new();
+		let common=Pile.new();
 		while(~(i=0)) {
 			let random_seed=Random.rand();
 			let random_seed=Tool.mod(random_seed, 2);
 			if((random_seed=1 & (~(player_2.getSZ()=26))) | (player_1.getSZ()=26)) {
-				do player_2.add_card(i);
+				do player_2.addCard(i);
 			}
 			else {
-				do player_1.add_card(i);
+				do player_1.addCard(i);
 			}
 			do Random.setSeed(i*5+1);
 			let i=i-1;
 		}
-		do player1.shuffle_pile();
-		do player2.shuffle_pile();
+		do player1.shufflePile();
+		do player2.shufflePile();
 		return this;
 	}
-	method void move_pile(int type) {
+	method void movePile(int type) {
 		//type1: common->1
 		//type2: common->2
 		let sz=common.getSZ();
 		while(~(sz=0)) {
 			if(type=1) {
-				do player_1.add_card(common.getback());
+				do player_1.addCard(common.getback());
 			}
 			else {
-				do player_2.add_card(common.getback());
+				do player_2.addCard(common.getback());
 			}
 			do common.popback();
 			let sz=common.getSZ();
 		}
 		return;
+	}
+	method void removeTopCard(int from) {
+		//from=1(player_1), 2(player_2);
+		if(from=1) {
+			do common.addCard(player_1.getback());
+			do player_1.popback();
+		}
+		else {
+			do common.addCard(player_2.getback());
+			do player_2.popback();
+		}
+		return;
+	}
+	method void shuffleAll() {
+		do player1.shufflePile();
+		do player2.shufflePile();
+		return;
+	}
+	method Pile getPile1() {
+		return player_1;
+	}
+	method Pile getPile2() {
+		return player_2;
+	}
+	method Pile getCommon() {
+		return common;
 	}
 	//draw
 	//set screen

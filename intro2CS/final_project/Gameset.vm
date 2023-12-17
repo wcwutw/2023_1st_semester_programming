@@ -5,7 +5,11 @@ pop pointer 0
 push constant 52
 pop this 3
 call Pile.new 0
-pop temp 0
+pop this 0
+call Pile.new 0
+pop this 1
+call Pile.new 0
+pop this 2
 label WHILE_EXP0
 push this 3
 push constant 0
@@ -38,13 +42,13 @@ goto IF_FALSE0
 label IF_TRUE0
 push this 1
 push this 3
-call Pile.add_card 2
+call Pile.addCard 2
 pop temp 0
 goto IF_END0
 label IF_FALSE0
 push this 0
 push this 3
-call Pile.add_card 2
+call Pile.addCard 2
 pop temp 0
 label IF_END0
 push this 3
@@ -60,13 +64,13 @@ sub
 pop this 3
 goto WHILE_EXP0
 label WHILE_END0
-call player1.shuffle_pile 0
+call player1.shufflePile 0
 pop temp 0
-call player2.shuffle_pile 0
+call player2.shufflePile 0
 pop temp 0
 push pointer 0
 return
-function Gameset.move_pile 0
+function Gameset.movePile 0
 push argument 0
 pop pointer 0
 push this 2
@@ -88,14 +92,14 @@ label IF_TRUE0
 push this 0
 push this 2
 call Pile.getback 1
-call Pile.add_card 2
+call Pile.addCard 2
 pop temp 0
 goto IF_END0
 label IF_FALSE0
 push this 1
 push this 2
 call Pile.getback 1
-call Pile.add_card 2
+call Pile.addCard 2
 pop temp 0
 label IF_END0
 push this 2
@@ -107,4 +111,58 @@ pop this 5
 goto WHILE_EXP0
 label WHILE_END0
 push constant 0
+return
+function Gameset.removeTopCard 0
+push argument 0
+pop pointer 0
+push argument 1
+push constant 1
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 2
+push this 0
+call Pile.getback 1
+call Pile.addCard 2
+pop temp 0
+push this 0
+call Pile.popback 1
+pop temp 0
+goto IF_END0
+label IF_FALSE0
+push this 2
+push this 1
+call Pile.getback 1
+call Pile.addCard 2
+pop temp 0
+push this 1
+call Pile.popback 1
+pop temp 0
+label IF_END0
+push constant 0
+return
+function Gameset.shuffleAll 0
+push argument 0
+pop pointer 0
+call player1.shufflePile 0
+pop temp 0
+call player2.shufflePile 0
+pop temp 0
+push constant 0
+return
+function Gameset.getPile1 0
+push argument 0
+pop pointer 0
+push this 0
+return
+function Gameset.getPile2 0
+push argument 0
+pop pointer 0
+push this 1
+return
+function Gameset.getCommon 0
+push argument 0
+pop pointer 0
+push this 2
 return
