@@ -95,23 +95,36 @@ push argument 0
 pop pointer 0
 push constant 26
 pop this 3
+push constant 9487
+push constant 0
+push this 0
+add
+pop pointer 1
+push that 0
+sub
+call Random.setSeed 1
+pop temp 0
 label WHILE_EXP0
 push this 3
 push constant 0
 gt
 not
 if-goto WHILE_END0
-push this 3
-push constant 1
-sub
-pop this 3
 call Random.rand 0
+pop this 4
+push this 4
+push this 3
+call Math.divide 2
 pop this 4
 push this 4
 push this 1
 call Tool.mod 2
 pop this 4
 call Random.rand 0
+pop this 5
+push this 5
+push this 3
+call Math.divide 2
 pop this 5
 push this 5
 push this 1
@@ -143,6 +156,10 @@ pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
+push this 3
+push constant 1
+sub
+pop this 3
 goto WHILE_EXP0
 label WHILE_END0
 push constant 0

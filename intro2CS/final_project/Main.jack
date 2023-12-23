@@ -22,17 +22,16 @@ class Main{
 		let find="find!";
 		let hello="hello";
 		let input_char=Keyboard.readChar();
-		let input_ascii=Tool.asciiCode(input_char);
+		let input_ascii=Tool.asciiCode(input_char); //press any button to set seed and start
+		do Random.setSeed(input_ascii);
+		let input_ascii=49;
 		while(true) {
 			//set screen into startpage
 			let game=Gameset.new(); 
 			do game.drawStartScreen();
-			let input_char=Keyboard.readChar();
-			let input_ascii=Tool.asciiCode(input_char);
-			while(~(input_ascii=32)) {
+			while(~(input_ascii=32)) { // press space to start game
 				let input_char=Keyboard.readChar();
 				let input_ascii=Tool.asciiCode(input_char);
-				do Random.setSeed(input_ascii);
 			}
 			//set screen into game mode
 			//game initialization, reset variables
@@ -40,11 +39,12 @@ class Main{
 			let cur_player=1; //player 1 or 2
 			let round_count=1; //1~13
 			let game_end=0;
-			while(game_end=0) {
+			while(game_end=0) { 
 				let input_ascii=49;
 				if(cur_player=1) {
+					do Screen.setColor(true);
+					do Screen.drawCircle(15, 15, 10);
 					while(~(input_ascii=68)) {
-						do Random.setSeed(input_ascii);
 						let input_char=Keyboard.readChar();
 						let input_ascii=Tool.asciiCode(input_char);
 					}
@@ -53,8 +53,9 @@ class Main{
 					//move top card in Pile_1 to Common_pile
 				}
 				else {
+					do Screen.setColor(true);
+					do Screen.drawCircle(512-15, 256-15, 10);
 					while(~(input_ascii=74)) { //38
-						do Random.setSeed(input_ascii);
 						let input_char=Keyboard.readChar();
 						let input_ascii=Tool.asciiCode(input_char);
 					}
@@ -62,9 +63,13 @@ class Main{
 					do game.removeTopCard(2);
 					//move top card in Pile_2 to Common_pile
 				}
-				do Output.printString(hello);
 				let temp_pile=game.getCommon();
 				let info=temp_pile.getback();
+				do DrawCard.cleanCard();
+				do DrawCard.draw(info);
+				do Screen.setColor(false);
+				do Screen.drawCircle(15, 15, 10);
+				do Screen.drawCircle(512-15, 256-15, 10);
 				let info=Tool.mod(info, 13);
 				if(info=0) {
 					let info=13;
@@ -77,7 +82,6 @@ class Main{
 					while(break_condition=0) {
 						let input_char=Keyboard.readChar();
 						let input_ascii=Tool.asciiCode(input_char);
-						do Output.printInt(input_ascii);
 						do Random.setSeed(input_ascii);
 						if(input_ascii=65) {
 							let break_condition=1;
@@ -133,13 +137,14 @@ class Main{
 				let pile2_cnt=temp_pile.getSZ();
 				let temp_pile=game.getCommon();
 				let common_cnt=temp_pile.getSZ();
-				do Output.printInt(pile1_cnt);
-				do Output.printInt(pile2_cnt);
-				do Output.printInt(common_cnt);
-				do Output.printInt(round_count);
-				do Output.println();
+				//do Output.printInt(pile1_cnt);
+				//do Output.printInt(pile2_cnt);
+				//do Output.printInt(common_cnt);
+				//do Output.printInt(round_count);
+				//do Output.println();
 				//update both Pile_count
 				//draw something
+				do Gameset.drawCount(pile1_cnt, pile2_cnt);
 				//show Pile_count, round_count
 				let cur_player=3-cur_player;
 				if(pile1_cnt=0 | pile2_cnt=0) {

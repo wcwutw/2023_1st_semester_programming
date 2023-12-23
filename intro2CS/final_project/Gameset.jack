@@ -2,29 +2,22 @@ class Gameset{
 	field Pile player_1;
 	field Pile player_2;
 	field Pile common;
-	field int i;
 	field int random_seed;
 	field int sz;
-	field string debug;
 	constructor Gameset new() {
+		var int i;
 		let i=52;
-		let debug=":";
 		let player_1=Pile.new();
 		let player_2=Pile.new();
 		let common=Pile.new();
-		do Random.setSeed(516);
 		while(~(i=0)) {
-			let random_seed=Random.randRange(1);
+			let random_seed=Random.rand();
+			let random_seed=random_seed/i;
+			let random_seed=Tool.mod(random_seed, 2);
 			if((random_seed=1 & (~(player_2.getSZ()=26))) | (player_1.getSZ()=26)) {
-				do Output.printInt(random_seed+1);
-				do Output.printString(debug);
-				do Output.printInt(i);
 				do player_2.addCard(i);
 			}
 			else {
-				do Output.printInt(random_seed+1);
-				do Output.printString(debug);
-				do Output.printInt(i);
 				do player_1.addCard(i);
 			}
 			//do Random.setSeed(player_2.getback());
@@ -32,13 +25,6 @@ class Gameset{
 		}
 		do player_1.shufflePile();
 		do player_2.shufflePile();
-		//let sz=player_1.getSZ();
-		//do Output.printInt(sz);
-		//let sz=player_2.getSZ();
-		//do Output.printInt(sz);
-		do Output.printInt(player_1.getback());
-		do Output.printInt(player_2.getback());
-		do Output.println();
 		return this;
 	}
 	method void movePile(int type) {
@@ -67,8 +53,6 @@ class Gameset{
 			do common.addCard(player_2.getback());
 			do player_2.popback();
 		}
-		do Output.printInt(common.getback());
-		//draw card
 		return;
 	}
 	method void shuffleAll() {
@@ -86,8 +70,28 @@ class Gameset{
 		return common;
 	}
 	//draw
+	function void drawCount(int count1, int count2) {
+		var int ten1;
+		var int sig1;
+		var int ten2;
+		var int sig2;
+		let ten1=count1/10;
+		let sig1=Tool.mod(count1, 10);
+		let ten2=count2/10;
+		let sig2=Tool.mod(count2, 10);
+		do Screen.setColor(false);
+		do Screen.drawRectangle(31, 87, 101, 128);
+		do Screen.setColor(true);
+		do DrawCard.drawNumber(ten1, 31, 87);
+		do DrawCard.drawNumber(sig1, 71, 87);
+		do Screen.setColor(false);
+		do Screen.drawRectangle(401, 142, 471, 183);
+		do Screen.setColor(true);
+		do DrawCard.drawNumber(ten2, 401, 142);
+		do DrawCard.drawNumber(sig2, 441, 142);
+		return;
+	}
 	//set screen
-	
 	method void drawStartScreen() {
 		do Screen.clearScreen();
 		do DrawTool.drawH(10*32+10);
@@ -105,6 +109,14 @@ class Gameset{
 	}
 	method void drawPlayScreen() {
 		do Screen.clearScreen();
+		do Screen.drawRectangle(31, 138, 101, 250);
+		do Screen.drawRectangle(401, 10, 471, 132);
+		do Screen.drawLine(215, 74, 285, 74);
+		do Screen.drawLine(215, 74, 215, 186);
+		do Screen.drawLine(215, 186, 285, 186);
+		do Screen.drawLine(285, 74, 285, 186);
+		do Screen.drawLine(250, 0, 250, 74);
+		do Screen.drawLine(250, 186, 250, 255);
 		return;
 	}
 }

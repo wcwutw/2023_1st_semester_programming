@@ -1,34 +1,33 @@
-function Gameset.new 0
-push constant 7
+function Gameset.new 1
+push constant 5
 call Memory.alloc 1
 pop pointer 0
 push constant 52
-pop this 3
-push constant 1
-call String.new 1
-push constant 58
-call String.appendChar 2
-pop this 6
+pop local 0
 call Pile.new 0
 pop this 0
 call Pile.new 0
 pop this 1
 call Pile.new 0
 pop this 2
-push constant 516
-call Random.setSeed 1
-pop temp 0
 label WHILE_EXP0
-push this 3
+push local 0
 push constant 0
 eq
 not
 not
 if-goto WHILE_END0
-push constant 1
-call Random.randRange 1
-pop this 4
-push this 4
+call Random.rand 0
+pop this 3
+push this 3
+push local 0
+call Math.divide 2
+pop this 3
+push this 3
+push constant 2
+call Tool.mod 2
+pop this 3
+push this 3
 push constant 1
 eq
 push this 1
@@ -45,43 +44,21 @@ or
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
-push this 4
-push constant 1
-add
-call Output.printInt 1
-pop temp 0
-push this 6
-call Output.printString 1
-pop temp 0
-push this 3
-call Output.printInt 1
-pop temp 0
 push this 1
-push this 3
+push local 0
 call Pile.addCard 2
 pop temp 0
 goto IF_END0
 label IF_FALSE0
-push this 4
-push constant 1
-add
-call Output.printInt 1
-pop temp 0
-push this 6
-call Output.printString 1
-pop temp 0
-push this 3
-call Output.printInt 1
-pop temp 0
 push this 0
-push this 3
+push local 0
 call Pile.addCard 2
 pop temp 0
 label IF_END0
-push this 3
+push local 0
 push constant 1
 sub
-pop this 3
+pop local 0
 goto WHILE_EXP0
 label WHILE_END0
 push this 0
@@ -90,16 +67,6 @@ pop temp 0
 push this 1
 call Pile.shufflePile 1
 pop temp 0
-push this 0
-call Pile.getback 1
-call Output.printInt 1
-pop temp 0
-push this 1
-call Pile.getback 1
-call Output.printInt 1
-pop temp 0
-call Output.println 0
-pop temp 0
 push pointer 0
 return
 function Gameset.movePile 0
@@ -107,9 +74,9 @@ push argument 0
 pop pointer 0
 push this 2
 call Pile.getSZ 1
-pop this 5
+pop this 4
 label WHILE_EXP0
-push this 5
+push this 4
 push constant 0
 eq
 not
@@ -139,7 +106,7 @@ call Pile.popback 1
 pop temp 0
 push this 2
 call Pile.getSZ 1
-pop this 5
+pop this 4
 goto WHILE_EXP0
 label WHILE_END0
 push constant 0
@@ -172,10 +139,6 @@ push this 1
 call Pile.popback 1
 pop temp 0
 label IF_END0
-push this 2
-call Pile.getback 1
-call Output.printInt 1
-pop temp 0
 push constant 0
 return
 function Gameset.shuffleAll 0
@@ -203,6 +166,71 @@ function Gameset.getCommon 0
 push argument 0
 pop pointer 0
 push this 2
+return
+function Gameset.drawCount 4
+push argument 0
+push constant 10
+call Math.divide 2
+pop local 0
+push argument 0
+push constant 10
+call Tool.mod 2
+pop local 1
+push argument 1
+push constant 10
+call Math.divide 2
+pop local 2
+push argument 1
+push constant 10
+call Tool.mod 2
+pop local 3
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push constant 31
+push constant 87
+push constant 101
+push constant 128
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push local 0
+push constant 31
+push constant 87
+call DrawCard.drawNumber 3
+pop temp 0
+push local 1
+push constant 71
+push constant 87
+call DrawCard.drawNumber 3
+pop temp 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push constant 401
+push constant 142
+push constant 471
+push constant 183
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push local 2
+push constant 401
+push constant 142
+call DrawCard.drawNumber 3
+pop temp 0
+push local 3
+push constant 441
+push constant 142
+call DrawCard.drawNumber 3
+pop temp 0
+push constant 0
 return
 function Gameset.drawStartScreen 0
 push argument 0
@@ -292,6 +320,54 @@ function Gameset.drawPlayScreen 0
 push argument 0
 pop pointer 0
 call Screen.clearScreen 0
+pop temp 0
+push constant 31
+push constant 138
+push constant 101
+push constant 250
+call Screen.drawRectangle 4
+pop temp 0
+push constant 401
+push constant 10
+push constant 471
+push constant 132
+call Screen.drawRectangle 4
+pop temp 0
+push constant 215
+push constant 74
+push constant 285
+push constant 74
+call Screen.drawLine 4
+pop temp 0
+push constant 215
+push constant 74
+push constant 215
+push constant 186
+call Screen.drawLine 4
+pop temp 0
+push constant 215
+push constant 186
+push constant 285
+push constant 186
+call Screen.drawLine 4
+pop temp 0
+push constant 285
+push constant 74
+push constant 285
+push constant 186
+call Screen.drawLine 4
+pop temp 0
+push constant 250
+push constant 0
+push constant 250
+push constant 74
+call Screen.drawLine 4
+pop temp 0
+push constant 250
+push constant 186
+push constant 250
+push constant 255
+call Screen.drawLine 4
 pop temp 0
 push constant 0
 return

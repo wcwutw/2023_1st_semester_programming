@@ -49,16 +49,19 @@ class Pile{
 	}
 	method void shufflePile() {
 		let shuffle_times=26;
+		do Random.setSeed(9487-arr[0]);
 		while(shuffle_times>0) {
-			let shuffle_times = shuffle_times - 1;
 			let left_id=Random.rand();
+			let left_id=left_id/shuffle_times;
 			let left_id=Tool.mod(left_id, arr_sz);
 			let right_id=Random.rand();
+			let right_id=right_id/shuffle_times;
 			let right_id=Tool.mod(right_id, arr_sz);
 			//swap left and right
 			let swap_tmp=arr[left_id];
 			let arr[left_id]=arr[right_id];
 			let arr[right_id]=swap_tmp;
+			let shuffle_times = shuffle_times - 1;
 		}
 		return;
 	}
