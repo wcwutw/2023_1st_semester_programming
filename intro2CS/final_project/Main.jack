@@ -1,7 +1,10 @@
 class Main{
-	function void Main() {
+	function void main() {
 		//call other function
+
 		//variable set
+		var string find;
+		var string hello;
 		var char input_char;
 		var int input_ascii;
 		var int info;
@@ -12,24 +15,36 @@ class Main{
 		var int round_count;
 		var int game_end;
 		var int cur_player;
+		var int winner;
 		var Gameset game;
 		var Pile temp_pile;
-		while(1) {
-			let start_game=Keyboard.keyPressed();
-			while(start_game = 0) {
-				let start_game=Keyboard.keyPressed();
+		var int break_condition;
+		let find="find!";
+		let hello="hello";
+		let input_char=Keyboard.readChar();
+		let input_ascii=Tool.asciiCode(input_char);
+		while(true) {
+			//set screen into startpage
+			let game=Gameset.new(); 
+			do game.drawStartScreen();
+			let input_char=Keyboard.readChar();
+			let input_ascii=Tool.asciiCode(input_char);
+			while(~(input_ascii=32)) {
+				let input_char=Keyboard.readChar();
+				let input_ascii=Tool.asciiCode(input_char);
+				do Random.setSeed(input_ascii);
 			}
 			//set screen into game mode
 			//game initialization, reset variables
-			let game=Gameset.new(); //
+			do game.drawPlayScreen();
 			let cur_player=1; //player 1 or 2
 			let round_count=1; //1~13
 			let game_end=0;
 			while(game_end=0) {
-				let input_char=Keyboard.readChar();
-				let input_ascii=Tool.asciiCode(input_char);
+				let input_ascii=49;
 				if(cur_player=1) {
 					while(~(input_ascii=68)) {
+						do Random.setSeed(input_ascii);
 						let input_char=Keyboard.readChar();
 						let input_ascii=Tool.asciiCode(input_char);
 					}
@@ -39,6 +54,7 @@ class Main{
 				}
 				else {
 					while(~(input_ascii=74)) { //38
+						do Random.setSeed(input_ascii);
 						let input_char=Keyboard.readChar();
 						let input_ascii=Tool.asciiCode(input_char);
 					}
@@ -46,14 +62,35 @@ class Main{
 					do game.removeTopCard(2);
 					//move top card in Pile_2 to Common_pile
 				}
+				do Output.printString(hello);
 				let temp_pile=game.getCommon();
 				let info=temp_pile.getback();
-				if(Tool.mod(info, 13)+1=round_count) {
-					let input_char=Keyboard.readChar();
-					let input_ascii=Tool.asciiCode(input_char);
-					while(~(input_ascii=65 | input_ascii=68 | input_ascii=76 | input_ascii=74)) {
+				let info=Tool.mod(info, 13);
+				if(info=0) {
+					let info=13;
+				}
+				do Output.printInt(info);
+				do Output.printInt(round_count);
+				let input_ascii=49;
+				if(info=round_count) {
+					let break_condition=0;
+					while(break_condition=0) {
 						let input_char=Keyboard.readChar();
 						let input_ascii=Tool.asciiCode(input_char);
+						do Output.printInt(input_ascii);
+						do Random.setSeed(input_ascii);
+						if(input_ascii=65) {
+							let break_condition=1;
+						}
+						if(input_ascii=68) {
+							let break_condition=1;
+						}
+						if(input_ascii=74) {
+							let break_condition=1;
+						}
+						if(input_ascii=76) {
+							let break_condition=1;
+						}
 					}
 					//wait for A/L/D/J pressed
 					if(input_ascii=65) {
@@ -84,23 +121,41 @@ class Main{
 					}
 				}
 				else {
-					let round_count=round_count+1
-					if(round_count>13) let round_count=round_count-13;
-				}
-				let pile1_cnt=game.getPile1().getSZ();
-				let pile2_cnt=game.getPile2().getSZ();
-				let common_cnt=game.getcommon().getSZ();
+					let round_count=round_count+1;
+					if(round_count>13) {
+						let round_count=round_count-13;
+					}
+				} 
+				//if A/L is pressed accidentally, nothing happen
+				let temp_pile=game.getPile1();
+				let pile1_cnt=temp_pile.getSZ();
+				let temp_pile=game.getPile2();
+				let pile2_cnt=temp_pile.getSZ();
+				let temp_pile=game.getCommon();
+				let common_cnt=temp_pile.getSZ();
+				do Output.printInt(pile1_cnt);
+				do Output.printInt(pile2_cnt);
+				do Output.printInt(common_cnt);
+				do Output.printInt(round_count);
+				do Output.println();
 				//update both Pile_count
 				//draw something
 				//show Pile_count, round_count
 				let cur_player=3-cur_player;
-				if(Pile1_count=0 | Pile2_count=0) let game_end=1;
+				if(pile1_cnt=0 | pile2_cnt=0) {
+					let game_end=1;
+				}
 				//game_end->play final round? if have time i can implement this part
 				//middle=full but game not end			
 			}
-			if(pile1_count=0) //show player_1 win
-			if(pile2_count=0) //show player_2 win
-			do sys.wait(5000); //5000ms
+			if(pile1_cnt=0) {
+				let winner=1; //show player_1 win
+			}
+			if(pile2_cnt=0) {
+				let winner=2; //show player_2 win
+			}
+			do Output.printInt(winner);
+			do sys.wait(2000); //2000ms
 		}
 		return;
 	}

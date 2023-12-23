@@ -8,8 +8,8 @@ class Pile{
 	field int swap_tmp;
 	constructor Pile new() {
 		//return null list;
-		do arr.dispose();
-		do arr.new(52);
+		//do arr.dispose();
+		let arr=Array.new(52);
 		let arr_sz=0;
 		return this;
 	}
@@ -18,10 +18,20 @@ class Pile{
 		let arr_sz=arr_sz+1;
 		return;
 	}
-	method int removeCard() {
-		let arr_sz = arr_sz - 1;
-		let rem=arr[arr_sz];
-		return rem;
+	//method int removeCard() {
+	//	let arr_sz = arr_sz - 1;
+	//	let rem=arr[arr_sz];
+	//	let arr[arr_sz]=0;
+	//	return rem;
+	//}
+	method void printArr() {
+		var int i;
+		let i=0;
+		while(i<arr_sz) {
+			do Output.printInt(arr[i]);
+		}
+		do Output.println();
+		return;
 	}
 	method Array getArr() {
 		return arr;
@@ -37,15 +47,8 @@ class Pile{
 		let arr_sz=arr_sz-1;
 		return;
 	}
-	method void clearPile() {
-		do arr.dispose();
-		do arr.new(52);
-		let arr_sz=0;
-		return;
-	}
 	method void shufflePile() {
-		let shuffle_times=Random.rand();
-		let shuffle_times=Tool.mod(shuffle_times, arr_sz);
+		let shuffle_times=26;
 		while(shuffle_times>0) {
 			let shuffle_times = shuffle_times - 1;
 			let left_id=Random.rand();
