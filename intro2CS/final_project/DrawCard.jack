@@ -1,0 +1,239 @@
+class DrawCard{
+	function void card( int index ){
+		var int colorIndex , cardIndex ;
+	        do Screen.setColor(true);
+		//do Screen.drawRectangle(200,50 , 300 , 210 );
+		
+		do Screen.drawLine(215 , 74 , 285 , 74) ;
+		do Screen.drawLine(215 , 74 , 215 , 186) ;
+		do Screen.drawLine(215 , 186 , 285 , 186) ;
+		do Screen.drawLine(285 , 74 , 285 , 186) ;
+		
+		
+
+
+		let colorIndex = (index - 1) / 13  ;
+		let cardIndex = index - colorIndex * 13 ;
+		
+		do DrawCard.Drawnumber(cardIndex) ;
+		do DrawCard.Drawcolor( colorIndex ) ;
+		
+
+		return ;
+	}
+
+	function void Drawnumber (int value) {
+		do Screen.setColor(true);
+		if ( value = 1 ) {
+			do Screen.drawLine( 250 , 135 , 235 , 176 ) ;
+			do Screen.drawLine( 250 , 135 , 265 , 176 ) ;
+			do Screen.drawLine( 243 , 156 , 258 , 156 ) ;
+		}	
+		if ( value = 2 ) {
+			do Screen.drawLine(235 , 135 , 265 , 135) ;
+			do Screen.drawLine(265 , 135 , 265 , 156) ;				
+			do Screen.drawLine(265 , 156 , 235 , 156 ) ;
+			do Screen.drawLine(235 , 156 , 235 , 176 ) ;
+			do Screen.drawLine(235 , 176 , 265 , 176 ) ;
+		}
+		if ( value = 3 ) {
+			do Screen.drawLine(235 , 135 , 265 , 135) ;
+			do Screen.drawLine(265 , 135 , 265 , 156) ;				
+			do Screen.drawLine(265 , 156 , 235 , 156 ) ;
+			do Screen.drawLine(265 , 156 , 265 , 176 ) ;
+			do Screen.drawLine(235 , 176 , 265 , 176 ) ;
+		}
+		if ( value = 4 ) {
+			do Screen.drawLine(265 , 135 , 265 , 156) ;				
+			do Screen.drawLine(265 , 156 , 235 , 156 ) ;
+			do Screen.drawLine(265 , 156 , 265 , 176 ) ;
+			do Screen.drawLine(235 , 156 , 235 , 135 ) ;
+
+		}
+		if ( value = 5 ) {
+			do Screen.drawLine(235 , 135 , 265 , 135) ;
+			do Screen.drawLine(235 , 135 , 235 , 156) ;				
+			do Screen.drawLine(265 , 156 , 235 , 156 ) ;
+			do Screen.drawLine(265 , 156 , 265 , 176 ) ;
+			do Screen.drawLine(235 , 176 , 265 , 176 ) ;
+		}
+		if ( value = 6 ) {
+			do Screen.drawLine(235 , 135 , 265 , 135) ;
+			do Screen.drawLine(235 , 135 , 235 , 156) ;				
+			do Screen.drawLine(265 , 156 , 235 , 156 ) ;
+			do Screen.drawLine(265 , 156 , 265 , 176 ) ;
+			do Screen.drawLine(235 , 176 , 265 , 176 ) ;
+			do Screen.drawLine(235 , 156 , 235 , 176 ) ;
+		}
+		if ( value = 7 ) {
+			do Screen.drawLine(265 , 135 , 250 , 176) ;
+			do Screen.drawLine( 235 , 135 , 265 , 135 ) ;
+		}
+		if ( value = 8 ) {
+			do Screen.drawLine(235 , 135 , 265 , 135) ;
+			do Screen.drawLine(265 , 135 , 265 , 156) ;				
+			do Screen.drawLine(265 , 156 , 235 , 156 ) ;
+			do Screen.drawLine(265 , 156 , 265 , 176 ) ;
+			do Screen.drawLine(235 , 176 , 265 , 176 ) ;
+			do Screen.drawLine(235 , 135 , 235 , 176) ;
+		}
+		if ( value = 9 ) {
+			do Screen.drawLine(235 , 135 , 265 , 135) ;
+			do Screen.drawLine(265 , 135 , 265 , 156) ;				
+			do Screen.drawLine(265 , 156 , 235 , 156 ) ;
+			do Screen.drawLine(265 , 156 , 265 , 176 ) ;
+			do Screen.drawLine(235 , 176 , 265 , 176 ) ;
+			do Screen.drawLine(235 , 135 , 235 , 156) ;
+		}
+		if ( value = 10 ) {
+			do Screen.drawLine( 235 , 135 , 265 , 135 ) ;
+			do Screen.drawLine( 250 , 135 , 250 , 176 ) ;
+		}
+		if ( value = 11 ) {
+			do Screen.drawLine( 235 , 135 , 265 , 135 ) ;
+			do Screen.drawLine( 250 , 135 , 250 , 176 ) ;
+			do Screen.drawLine( 250 , 176 , 235 , 165 ) ;
+		}
+		if ( value = 12 ) {
+			do Screen.drawLine( 245 , 135 , 255 , 135 ) ;
+			do Screen.drawLine( 255 , 135 , 265 , 145 ) ;
+			do Screen.drawLine( 245 , 135 , 235 , 145 ) ;
+			do Screen.drawLine( 235 , 145 , 235 , 166 ) ;
+			do Screen.drawLine( 235 , 166 , 245 , 176 ) ;
+			do Screen.drawLine( 245 , 176 , 255 , 176 ) ;
+			do Screen.drawLine( 255 , 176 , 265 , 166 ) ;
+			do Screen.drawLine( 265 , 145 , 265 , 166 ) ;
+			do Screen.drawLine( 250 , 156 , 265 , 176 ) ;
+		}
+		if ( value = 13 ) {
+			do Screen.drawLine( 235 , 135 , 235 , 176 ) ;	
+			do Screen.drawLine( 235 , 156 , 265 , 135 ) ;	
+			do Screen.drawLine( 235 , 156 , 265 , 176 ) ;	
+		} 
+
+		return ;
+	}
+
+
+	function void Drawcolor( int type ) {
+		do Screen.setColor(true) ;
+		if ( type = 4 ) {
+			//club
+			do Screen.drawCircle( 240 , 102 , 10 ) ;
+			do Screen.drawCircle( 250 , 92 , 10 ) ; 
+			do Screen.drawCircle( 260 , 102 , 10 ) ;
+			do Screen. drawRectangle( 247 , 102 , 253 , 122 ) ;
+		}
+		if ( type = 3 ) {
+			//diamond
+			do Screen.drawLine(250 , 82 , 270 , 102) ;
+			do Screen.drawLine(249 , 83 , 269 , 103) ;
+			do Screen.drawLine(248 , 84 , 268 , 104) ;
+			do Screen.drawLine(247 , 85 , 267 , 105) ;
+			do Screen.drawLine(246 , 86 , 266 , 106) ;
+			do Screen.drawLine(245 , 87 , 265 , 107) ;
+			do Screen.drawLine(244 , 88 , 264 , 108) ;
+			do Screen.drawLine(243 , 89 , 263 , 109) ;
+			do Screen.drawLine(242 , 90 , 262 , 110) ;
+			do Screen.drawLine(241 , 91 , 261 , 111) ;
+			do Screen.drawLine(240 , 92 , 260 , 112) ;
+			do Screen.drawLine(239 , 93 , 259 , 113) ;
+			do Screen.drawLine(238 , 94 , 258 , 114) ;
+			do Screen.drawLine(237 , 95 , 257 , 115) ;
+			do Screen.drawLine(236 , 96 , 256 , 116) ;
+			do Screen.drawLine(235 , 97 , 255 , 117) ;
+			do Screen.drawLine(234 , 98 , 254 , 118) ;
+			do Screen.drawLine(233 , 99 , 253 , 119) ;
+			do Screen.drawLine(232 , 100 , 252 , 120) ;
+			do Screen.drawLine(231 , 101 , 251 , 121) ;
+			do Screen.drawLine(230 , 102 , 250 , 122) ;
+		
+		}
+		if ( type = 2 ) {
+			//heart 
+			do Screen.drawLine(235 , 82 + 5 , 245 , 82 + 5 ) ;
+			do Screen.drawLine(234 , 83 + 5 , 245 , 83 + 5 ) ;
+			do Screen.drawLine(234 , 84 + 5 , 246 , 84 + 5 ) ;
+			do Screen.drawLine(233 , 85 + 5 , 246 , 85 + 5 ) ;
+			do Screen.drawLine(233 , 86 + 5 , 247 , 86 + 5 ) ;
+			do Screen.drawLine(232 , 87 + 5 , 247 , 87 + 5 ) ;
+			do Screen.drawLine(232 , 88 + 5 , 248 , 88 + 5 ) ;
+			do Screen.drawLine(231 , 89 + 5 , 248 , 89 + 5 ) ;
+			do Screen.drawLine(231 , 90 + 5 , 249 , 90 + 5 ) ;
+			do Screen.drawLine(230 , 91 + 5 , 249 , 91 + 5 ) ;
+			do Screen.drawLine(230 , 92 + 5 , 250 , 92 + 5 ) ;
+
+
+			do Screen.drawLine(235 + 20 , 82 + 5 , 245 + 20 , 82 + 5 ) ;
+			do Screen.drawLine(234 + 20 , 83 + 5 , 245 + 20 , 83 + 5 ) ;
+			do Screen.drawLine(234 + 20 , 84 + 5 , 246 + 20 , 84 + 5 ) ;
+			do Screen.drawLine(233 + 20 , 85 + 5 , 246 + 20 , 85 + 5 ) ;
+			do Screen.drawLine(233 + 20 , 86 + 5 , 247 + 20 , 86 + 5 ) ;
+			do Screen.drawLine(232 + 20 , 87 + 5 , 247 + 20 , 87 + 5 ) ;
+			do Screen.drawLine(232 + 20 , 88 + 5 , 248 + 20 , 88 + 5 ) ;
+			do Screen.drawLine(231 + 20 , 89 + 5 , 248 + 20 , 89 + 5 ) ;
+			do Screen.drawLine(231 + 20 , 90 + 5 , 249 + 20 , 90 + 5 ) ;
+			do Screen.drawLine(230 + 20 , 91 + 5 , 249 + 20 , 91 + 5 ) ;
+			do Screen.drawLine(230 + 20 , 92 + 5 , 250 + 20 , 92 + 5 ) ;
+			
+			do Screen.drawLine(230 , 92 + 5 , 270 , 92 + 5 ) ;
+			do Screen.drawLine(231 , 93 + 5 , 269 , 93 + 5 ) ;
+			do Screen.drawLine(232 , 94 + 5 , 268 , 94 + 5 ) ;
+			do Screen.drawLine(233 , 95 + 5 , 267 , 95 + 5 ) ;
+			do Screen.drawLine(234 , 96 + 5 , 266 , 96 + 5 ) ;
+			do Screen.drawLine(235 , 97 + 5 , 265 , 97 + 5 ) ;
+			do Screen.drawLine(236 , 98 + 5 , 264 , 98 + 5 ) ;
+			do Screen.drawLine(237 , 99 + 5 , 263 , 99 + 5 ) ;
+			do Screen.drawLine(238 , 100 + 5 , 262 , 100 + 5 ) ;
+			do Screen.drawLine(239 , 101 + 5 , 261 , 101 + 5 ) ;
+			do Screen.drawLine(240 , 102 + 5 , 260 , 102 + 5 ) ;
+			do Screen.drawLine(241 , 103 + 5 , 259 , 103 + 5 ) ;
+			do Screen.drawLine(242 , 104 + 5 , 258 , 104 + 5 ) ;
+			do Screen.drawLine(243 , 105 + 5 , 257 , 105 + 5 ) ;
+			do Screen.drawLine(244 , 106 + 5 , 256 , 106 + 5 ) ;
+			do Screen.drawLine(245 , 107 + 5 , 255 , 107 + 5 ) ;
+			do Screen.drawLine(246 , 108 + 5 , 254 , 108 + 5 ) ;
+			do Screen.drawLine(247 , 109 + 5 , 253 , 109 + 5 ) ;
+			do Screen.drawLine(248 , 110 + 5 , 252 , 110 + 5 ) ;
+			do Screen.drawLine(249 , 111 + 5 , 251 , 111 + 5 ) ;
+			do Screen.drawLine(250 , 112 + 5 , 250 , 112 + 5 ) ;
+
+		}
+		if ( type = 1 ) {
+			do Screen.drawCircle( 240 , 112 - 5 , 8 ) ;
+			do Screen.drawCircle( 260 , 112 - 5 , 8 ) ;
+			
+			do Screen.drawLine( 230 + 3 , 112  - 5 , 270 - 3 , 112 - 5  ) ;
+			do Screen.drawLine( 231 + 2 , 111  - 5 , 269 - 2 , 111  - 5 ) ;
+			do Screen.drawLine( 232 + 1 , 110 - 5  , 268 - 1 , 110  - 5 ) ;
+			do Screen.drawLine( 233 , 109  - 5 , 267 , 109 - 5  ) ;
+			do Screen.drawLine( 234 , 108 - 5  , 266 , 108  - 5 ) ;
+			do Screen.drawLine( 235 , 107  - 5 , 265 , 107  - 5 ) ;
+			do Screen.drawLine( 236 , 106  - 5 , 264 , 106  - 5 ) ;
+			do Screen.drawLine( 237 , 105  - 5 , 263 , 105  - 5 ) ;
+			do Screen.drawLine( 238 , 104  - 5 , 262 , 104 - 5  ) ;
+			do Screen.drawLine( 239 , 103  - 5 , 261 , 103  - 5 ) ;
+			do Screen.drawLine( 240 , 102  - 5 , 260 , 102 - 5  ) ;
+			do Screen.drawLine( 241 , 101  - 5 , 259 , 101  - 5 ) ;
+			do Screen.drawLine( 242 , 100 - 5  , 258 , 100  - 5 ) ;
+			do Screen.drawLine( 243 , 99  - 5 , 257 , 99 - 5  ) ;
+			do Screen.drawLine( 244 , 98  - 5 , 256 , 98  - 5 ) ;
+			do Screen.drawLine( 245 , 97  - 5 , 255 , 97  - 5 ) ;
+			do Screen.drawLine( 246 , 96  - 5 , 254 , 96  - 5 ) ;
+			do Screen.drawLine( 247 , 95  - 5 , 253 , 95  - 5 ) ;
+			do Screen.drawLine( 248 , 94 - 5  , 252 , 94  - 5 ) ;
+			do Screen.drawLine( 249 , 93  - 5 , 251 , 93  - 5 ) ;
+			do Screen.drawLine( 250 , 92  - 5 , 250 , 92  - 5 ) ;
+
+
+			do Screen.drawRectangle( 247 , 102  - 5  , 253 , 122 ) ;			
+
+		}
+		
+		return ;
+	}
+
+
+	
+    
+}

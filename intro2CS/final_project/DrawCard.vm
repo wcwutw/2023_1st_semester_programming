@@ -1,0 +1,1401 @@
+function DrawCard.card 2
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 215
+push constant 74
+push constant 285
+push constant 74
+call Screen.drawLine 4
+pop temp 0
+push constant 215
+push constant 74
+push constant 215
+push constant 186
+call Screen.drawLine 4
+pop temp 0
+push constant 215
+push constant 186
+push constant 285
+push constant 186
+call Screen.drawLine 4
+pop temp 0
+push constant 285
+push constant 74
+push constant 285
+push constant 186
+call Screen.drawLine 4
+pop temp 0
+push argument 0
+push constant 1
+sub
+push constant 13
+call Math.divide 2
+pop local 0
+push argument 0
+push local 0
+sub
+push constant 13
+call Math.multiply 2
+pop local 1
+push local 1
+call DrawCard.Drawnumber 1
+pop temp 0
+push local 0
+call DrawCard.Drawcolor 1
+pop temp 0
+push constant 0
+return
+function DrawCard.Drawnumber 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push argument 0
+push constant 1
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 250
+push constant 135
+push constant 235
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+push constant 250
+push constant 135
+push constant 265
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+push constant 243
+push constant 156
+push constant 258
+push constant 156
+call Screen.drawLine 4
+pop temp 0
+label IF_FALSE0
+push argument 0
+push constant 2
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 235
+push constant 135
+push constant 265
+push constant 135
+call Screen.drawLine 4
+pop temp 0
+push constant 265
+push constant 135
+push constant 265
+push constant 156
+call Screen.drawLine 4
+pop temp 0
+push constant 265
+push constant 156
+push constant 235
+push constant 156
+call Screen.drawLine 4
+pop temp 0
+push constant 235
+push constant 156
+push constant 235
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+push constant 235
+push constant 176
+push constant 265
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+label IF_FALSE1
+push argument 0
+push constant 3
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push constant 235
+push constant 135
+push constant 265
+push constant 135
+call Screen.drawLine 4
+pop temp 0
+push constant 265
+push constant 135
+push constant 265
+push constant 156
+call Screen.drawLine 4
+pop temp 0
+push constant 265
+push constant 156
+push constant 235
+push constant 156
+call Screen.drawLine 4
+pop temp 0
+push constant 265
+push constant 156
+push constant 265
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+push constant 235
+push constant 176
+push constant 265
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+label IF_FALSE2
+push argument 0
+push constant 4
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push constant 265
+push constant 135
+push constant 265
+push constant 156
+call Screen.drawLine 4
+pop temp 0
+push constant 265
+push constant 156
+push constant 235
+push constant 156
+call Screen.drawLine 4
+pop temp 0
+push constant 265
+push constant 156
+push constant 265
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+push constant 235
+push constant 156
+push constant 235
+push constant 135
+call Screen.drawLine 4
+pop temp 0
+label IF_FALSE3
+push argument 0
+push constant 5
+eq
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push constant 235
+push constant 135
+push constant 265
+push constant 135
+call Screen.drawLine 4
+pop temp 0
+push constant 235
+push constant 135
+push constant 235
+push constant 156
+call Screen.drawLine 4
+pop temp 0
+push constant 265
+push constant 156
+push constant 235
+push constant 156
+call Screen.drawLine 4
+pop temp 0
+push constant 265
+push constant 156
+push constant 265
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+push constant 235
+push constant 176
+push constant 265
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+label IF_FALSE4
+push argument 0
+push constant 6
+eq
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push constant 235
+push constant 135
+push constant 265
+push constant 135
+call Screen.drawLine 4
+pop temp 0
+push constant 235
+push constant 135
+push constant 235
+push constant 156
+call Screen.drawLine 4
+pop temp 0
+push constant 265
+push constant 156
+push constant 235
+push constant 156
+call Screen.drawLine 4
+pop temp 0
+push constant 265
+push constant 156
+push constant 265
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+push constant 235
+push constant 176
+push constant 265
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+push constant 235
+push constant 156
+push constant 235
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+label IF_FALSE5
+push argument 0
+push constant 7
+eq
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push constant 265
+push constant 135
+push constant 250
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+push constant 235
+push constant 135
+push constant 265
+push constant 135
+call Screen.drawLine 4
+pop temp 0
+label IF_FALSE6
+push argument 0
+push constant 8
+eq
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push constant 235
+push constant 135
+push constant 265
+push constant 135
+call Screen.drawLine 4
+pop temp 0
+push constant 265
+push constant 135
+push constant 265
+push constant 156
+call Screen.drawLine 4
+pop temp 0
+push constant 265
+push constant 156
+push constant 235
+push constant 156
+call Screen.drawLine 4
+pop temp 0
+push constant 265
+push constant 156
+push constant 265
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+push constant 235
+push constant 176
+push constant 265
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+push constant 235
+push constant 135
+push constant 235
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+label IF_FALSE7
+push argument 0
+push constant 9
+eq
+if-goto IF_TRUE8
+goto IF_FALSE8
+label IF_TRUE8
+push constant 235
+push constant 135
+push constant 265
+push constant 135
+call Screen.drawLine 4
+pop temp 0
+push constant 265
+push constant 135
+push constant 265
+push constant 156
+call Screen.drawLine 4
+pop temp 0
+push constant 265
+push constant 156
+push constant 235
+push constant 156
+call Screen.drawLine 4
+pop temp 0
+push constant 265
+push constant 156
+push constant 265
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+push constant 235
+push constant 176
+push constant 265
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+push constant 235
+push constant 135
+push constant 235
+push constant 156
+call Screen.drawLine 4
+pop temp 0
+label IF_FALSE8
+push argument 0
+push constant 10
+eq
+if-goto IF_TRUE9
+goto IF_FALSE9
+label IF_TRUE9
+push constant 235
+push constant 135
+push constant 265
+push constant 135
+call Screen.drawLine 4
+pop temp 0
+push constant 250
+push constant 135
+push constant 250
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+label IF_FALSE9
+push argument 0
+push constant 11
+eq
+if-goto IF_TRUE10
+goto IF_FALSE10
+label IF_TRUE10
+push constant 235
+push constant 135
+push constant 265
+push constant 135
+call Screen.drawLine 4
+pop temp 0
+push constant 250
+push constant 135
+push constant 250
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+push constant 250
+push constant 176
+push constant 235
+push constant 165
+call Screen.drawLine 4
+pop temp 0
+label IF_FALSE10
+push argument 0
+push constant 12
+eq
+if-goto IF_TRUE11
+goto IF_FALSE11
+label IF_TRUE11
+push constant 245
+push constant 135
+push constant 255
+push constant 135
+call Screen.drawLine 4
+pop temp 0
+push constant 255
+push constant 135
+push constant 265
+push constant 145
+call Screen.drawLine 4
+pop temp 0
+push constant 245
+push constant 135
+push constant 235
+push constant 145
+call Screen.drawLine 4
+pop temp 0
+push constant 235
+push constant 145
+push constant 235
+push constant 166
+call Screen.drawLine 4
+pop temp 0
+push constant 235
+push constant 166
+push constant 245
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+push constant 245
+push constant 176
+push constant 255
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+push constant 255
+push constant 176
+push constant 265
+push constant 166
+call Screen.drawLine 4
+pop temp 0
+push constant 265
+push constant 145
+push constant 265
+push constant 166
+call Screen.drawLine 4
+pop temp 0
+push constant 250
+push constant 156
+push constant 265
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+label IF_FALSE11
+push argument 0
+push constant 13
+eq
+if-goto IF_TRUE12
+goto IF_FALSE12
+label IF_TRUE12
+push constant 235
+push constant 135
+push constant 235
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+push constant 235
+push constant 156
+push constant 265
+push constant 135
+call Screen.drawLine 4
+pop temp 0
+push constant 235
+push constant 156
+push constant 265
+push constant 176
+call Screen.drawLine 4
+pop temp 0
+label IF_FALSE12
+push constant 0
+return
+function DrawCard.Drawcolor 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push argument 0
+push constant 4
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 240
+push constant 102
+push constant 10
+call Screen.drawCircle 3
+pop temp 0
+push constant 250
+push constant 92
+push constant 10
+call Screen.drawCircle 3
+pop temp 0
+push constant 260
+push constant 102
+push constant 10
+call Screen.drawCircle 3
+pop temp 0
+push constant 247
+push constant 102
+push constant 253
+push constant 122
+call Screen.drawRectangle 4
+pop temp 0
+label IF_FALSE0
+push argument 0
+push constant 3
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 250
+push constant 82
+push constant 270
+push constant 102
+call Screen.drawLine 4
+pop temp 0
+push constant 249
+push constant 83
+push constant 269
+push constant 103
+call Screen.drawLine 4
+pop temp 0
+push constant 248
+push constant 84
+push constant 268
+push constant 104
+call Screen.drawLine 4
+pop temp 0
+push constant 247
+push constant 85
+push constant 267
+push constant 105
+call Screen.drawLine 4
+pop temp 0
+push constant 246
+push constant 86
+push constant 266
+push constant 106
+call Screen.drawLine 4
+pop temp 0
+push constant 245
+push constant 87
+push constant 265
+push constant 107
+call Screen.drawLine 4
+pop temp 0
+push constant 244
+push constant 88
+push constant 264
+push constant 108
+call Screen.drawLine 4
+pop temp 0
+push constant 243
+push constant 89
+push constant 263
+push constant 109
+call Screen.drawLine 4
+pop temp 0
+push constant 242
+push constant 90
+push constant 262
+push constant 110
+call Screen.drawLine 4
+pop temp 0
+push constant 241
+push constant 91
+push constant 261
+push constant 111
+call Screen.drawLine 4
+pop temp 0
+push constant 240
+push constant 92
+push constant 260
+push constant 112
+call Screen.drawLine 4
+pop temp 0
+push constant 239
+push constant 93
+push constant 259
+push constant 113
+call Screen.drawLine 4
+pop temp 0
+push constant 238
+push constant 94
+push constant 258
+push constant 114
+call Screen.drawLine 4
+pop temp 0
+push constant 237
+push constant 95
+push constant 257
+push constant 115
+call Screen.drawLine 4
+pop temp 0
+push constant 236
+push constant 96
+push constant 256
+push constant 116
+call Screen.drawLine 4
+pop temp 0
+push constant 235
+push constant 97
+push constant 255
+push constant 117
+call Screen.drawLine 4
+pop temp 0
+push constant 234
+push constant 98
+push constant 254
+push constant 118
+call Screen.drawLine 4
+pop temp 0
+push constant 233
+push constant 99
+push constant 253
+push constant 119
+call Screen.drawLine 4
+pop temp 0
+push constant 232
+push constant 100
+push constant 252
+push constant 120
+call Screen.drawLine 4
+pop temp 0
+push constant 231
+push constant 101
+push constant 251
+push constant 121
+call Screen.drawLine 4
+pop temp 0
+push constant 230
+push constant 102
+push constant 250
+push constant 122
+call Screen.drawLine 4
+pop temp 0
+label IF_FALSE1
+push argument 0
+push constant 2
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push constant 235
+push constant 82
+push constant 5
+add
+push constant 245
+push constant 82
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 234
+push constant 83
+push constant 5
+add
+push constant 245
+push constant 83
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 234
+push constant 84
+push constant 5
+add
+push constant 246
+push constant 84
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 233
+push constant 85
+push constant 5
+add
+push constant 246
+push constant 85
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 233
+push constant 86
+push constant 5
+add
+push constant 247
+push constant 86
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 232
+push constant 87
+push constant 5
+add
+push constant 247
+push constant 87
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 232
+push constant 88
+push constant 5
+add
+push constant 248
+push constant 88
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 231
+push constant 89
+push constant 5
+add
+push constant 248
+push constant 89
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 231
+push constant 90
+push constant 5
+add
+push constant 249
+push constant 90
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 230
+push constant 91
+push constant 5
+add
+push constant 249
+push constant 91
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 230
+push constant 92
+push constant 5
+add
+push constant 250
+push constant 92
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 235
+push constant 20
+add
+push constant 82
+push constant 5
+add
+push constant 245
+push constant 20
+add
+push constant 82
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 234
+push constant 20
+add
+push constant 83
+push constant 5
+add
+push constant 245
+push constant 20
+add
+push constant 83
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 234
+push constant 20
+add
+push constant 84
+push constant 5
+add
+push constant 246
+push constant 20
+add
+push constant 84
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 233
+push constant 20
+add
+push constant 85
+push constant 5
+add
+push constant 246
+push constant 20
+add
+push constant 85
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 233
+push constant 20
+add
+push constant 86
+push constant 5
+add
+push constant 247
+push constant 20
+add
+push constant 86
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 232
+push constant 20
+add
+push constant 87
+push constant 5
+add
+push constant 247
+push constant 20
+add
+push constant 87
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 232
+push constant 20
+add
+push constant 88
+push constant 5
+add
+push constant 248
+push constant 20
+add
+push constant 88
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 231
+push constant 20
+add
+push constant 89
+push constant 5
+add
+push constant 248
+push constant 20
+add
+push constant 89
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 231
+push constant 20
+add
+push constant 90
+push constant 5
+add
+push constant 249
+push constant 20
+add
+push constant 90
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 230
+push constant 20
+add
+push constant 91
+push constant 5
+add
+push constant 249
+push constant 20
+add
+push constant 91
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 230
+push constant 20
+add
+push constant 92
+push constant 5
+add
+push constant 250
+push constant 20
+add
+push constant 92
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 230
+push constant 92
+push constant 5
+add
+push constant 270
+push constant 92
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 231
+push constant 93
+push constant 5
+add
+push constant 269
+push constant 93
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 232
+push constant 94
+push constant 5
+add
+push constant 268
+push constant 94
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 233
+push constant 95
+push constant 5
+add
+push constant 267
+push constant 95
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 234
+push constant 96
+push constant 5
+add
+push constant 266
+push constant 96
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 235
+push constant 97
+push constant 5
+add
+push constant 265
+push constant 97
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 236
+push constant 98
+push constant 5
+add
+push constant 264
+push constant 98
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 237
+push constant 99
+push constant 5
+add
+push constant 263
+push constant 99
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 238
+push constant 100
+push constant 5
+add
+push constant 262
+push constant 100
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 239
+push constant 101
+push constant 5
+add
+push constant 261
+push constant 101
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 240
+push constant 102
+push constant 5
+add
+push constant 260
+push constant 102
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 241
+push constant 103
+push constant 5
+add
+push constant 259
+push constant 103
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 242
+push constant 104
+push constant 5
+add
+push constant 258
+push constant 104
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 243
+push constant 105
+push constant 5
+add
+push constant 257
+push constant 105
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 244
+push constant 106
+push constant 5
+add
+push constant 256
+push constant 106
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 245
+push constant 107
+push constant 5
+add
+push constant 255
+push constant 107
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 246
+push constant 108
+push constant 5
+add
+push constant 254
+push constant 108
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 247
+push constant 109
+push constant 5
+add
+push constant 253
+push constant 109
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 248
+push constant 110
+push constant 5
+add
+push constant 252
+push constant 110
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 249
+push constant 111
+push constant 5
+add
+push constant 251
+push constant 111
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 250
+push constant 112
+push constant 5
+add
+push constant 250
+push constant 112
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+label IF_FALSE2
+push argument 0
+push constant 1
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push constant 240
+push constant 112
+push constant 5
+sub
+push constant 8
+call Screen.drawCircle 3
+pop temp 0
+push constant 260
+push constant 112
+push constant 5
+sub
+push constant 8
+call Screen.drawCircle 3
+pop temp 0
+push constant 230
+push constant 3
+add
+push constant 112
+push constant 5
+sub
+push constant 270
+push constant 3
+sub
+push constant 112
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 231
+push constant 2
+add
+push constant 111
+push constant 5
+sub
+push constant 269
+push constant 2
+sub
+push constant 111
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 232
+push constant 1
+add
+push constant 110
+push constant 5
+sub
+push constant 268
+push constant 1
+sub
+push constant 110
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 233
+push constant 109
+push constant 5
+sub
+push constant 267
+push constant 109
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 234
+push constant 108
+push constant 5
+sub
+push constant 266
+push constant 108
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 235
+push constant 107
+push constant 5
+sub
+push constant 265
+push constant 107
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 236
+push constant 106
+push constant 5
+sub
+push constant 264
+push constant 106
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 237
+push constant 105
+push constant 5
+sub
+push constant 263
+push constant 105
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 238
+push constant 104
+push constant 5
+sub
+push constant 262
+push constant 104
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 239
+push constant 103
+push constant 5
+sub
+push constant 261
+push constant 103
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 240
+push constant 102
+push constant 5
+sub
+push constant 260
+push constant 102
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 241
+push constant 101
+push constant 5
+sub
+push constant 259
+push constant 101
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 242
+push constant 100
+push constant 5
+sub
+push constant 258
+push constant 100
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 243
+push constant 99
+push constant 5
+sub
+push constant 257
+push constant 99
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 244
+push constant 98
+push constant 5
+sub
+push constant 256
+push constant 98
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 245
+push constant 97
+push constant 5
+sub
+push constant 255
+push constant 97
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 246
+push constant 96
+push constant 5
+sub
+push constant 254
+push constant 96
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 247
+push constant 95
+push constant 5
+sub
+push constant 253
+push constant 95
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 248
+push constant 94
+push constant 5
+sub
+push constant 252
+push constant 94
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 249
+push constant 93
+push constant 5
+sub
+push constant 251
+push constant 93
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 250
+push constant 92
+push constant 5
+sub
+push constant 250
+push constant 92
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 247
+push constant 102
+push constant 5
+sub
+push constant 253
+push constant 122
+call Screen.drawRectangle 4
+pop temp 0
+label IF_FALSE3
+push constant 0
+return
