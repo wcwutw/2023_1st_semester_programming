@@ -24,22 +24,22 @@ class Main{
 		let input_ascii=49;
 		//set screen into startpage
 		let game=Gameset.new(); 
-		do game.drawStartScreen();
+		do Gameset.drawStartScreen();
 		while(~(input_ascii=32)) { // press space to start game
 			let input_char=Keyboard.readChar();
 			let input_ascii=Tool.asciiCode(input_char);
 		}
 		//set screen into game mode
 		//game initialization, reset variables
-		do game.drawPlayScreen();
+		do Gameset.drawPlayScreen();
 		let cur_player=1; //player 1 or 2
 		let round_count=1; //1~13
 		let game_end=0;
 		let pile1_cnt=26;
 		let pile2_cnt=26;
+		do Gameset.drawCount(pile1_cnt, pile2_cnt);
 		let round_type=1;
 		while(game_end=0) {
-			do Gameset.drawCount(pile1_cnt, pile2_cnt);
 			let input_ascii=49;
 			if(round_type=1) {
 				let break_condition=0;
@@ -121,9 +121,6 @@ class Main{
 						}
 					}	 
 				}
-				do Screen.setColor(false);
-				do Screen.drawCircle(15, 15, 10);
-				do Screen.drawCircle(512-15, 256-15, 10);
 			}
 			else { //info=round_count
 				let break_condition=0;
@@ -177,6 +174,9 @@ class Main{
 				}
 				do DrawCard.cleanCard();
 			}
+			do Screen.setColor(false);
+			do Screen.drawCircle(15, 15, 10);
+			do Screen.drawCircle(512-15, 256-15, 10);
 			let temp_pile=game.getPile1();
 			let pile1_cnt=temp_pile.getSZ();
 			let temp_pile=game.getPile2();
@@ -186,9 +186,10 @@ class Main{
 			//do Output.printInt(round_count);
 			//do Output.println();
 			//update both Pile_count
-			if(pile1_cnt=0 | pile2_cnt=0) {
+			if((pile1_cnt*pile2_cnt)=0) {
 				let game_end=1;
 			}
+			do Gameset.drawCount(pile1_cnt, pile2_cnt);
 			if(cur_player=1) {
 				do Screen.setColor(true);
 				do Screen.drawCircle(15, 15, 10);
@@ -200,12 +201,12 @@ class Main{
 		}
 		if(pile1_cnt=0) {
 			let winner=1; //show player_1 win
-		
 		}
-		if(pile2_cnt=0) {
+		else {
 			let winner=2; //show player_2 win
-		
 		}
+		do Screen.clearScreen();
+		do Gameset.drawWinScreen(winner);
 		do sys.wait(5000); //2000ms
 		return;
 	}

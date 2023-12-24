@@ -11,8 +11,7 @@ push constant 49
 pop local 2
 call Gameset.new 0
 pop local 12
-push local 12
-call Gameset.drawStartScreen 1
+call Gameset.drawStartScreen 0
 pop temp 0
 label WHILE_EXP0
 push local 2
@@ -28,8 +27,7 @@ call Tool.asciiCode 1
 pop local 2
 goto WHILE_EXP0
 label WHILE_END0
-push local 12
-call Gameset.drawPlayScreen 1
+call Gameset.drawPlayScreen 0
 pop temp 0
 push constant 1
 pop local 9
@@ -41,6 +39,10 @@ push constant 26
 pop local 4
 push constant 26
 pop local 5
+push local 4
+push local 5
+call Gameset.drawCount 2
+pop temp 0
 push constant 1
 pop local 1
 label WHILE_EXP1
@@ -49,10 +51,6 @@ push constant 0
 eq
 not
 if-goto WHILE_END1
-push local 4
-push local 5
-call Gameset.drawCount 2
-pop temp 0
 push constant 49
 pop local 2
 push local 1
@@ -269,23 +267,6 @@ pop local 7
 label IF_FALSE11
 label IF_END10
 label IF_FALSE7
-push constant 0
-call Screen.setColor 1
-pop temp 0
-push constant 15
-push constant 15
-push constant 10
-call Screen.drawCircle 3
-pop temp 0
-push constant 512
-push constant 15
-sub
-push constant 256
-push constant 15
-sub
-push constant 10
-call Screen.drawCircle 3
-pop temp 0
 goto IF_END0
 label IF_FALSE0
 push constant 0
@@ -413,6 +394,23 @@ label IF_FALSE19
 call DrawCard.cleanCard 0
 pop temp 0
 label IF_END0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push constant 15
+push constant 15
+push constant 10
+call Screen.drawCircle 3
+pop temp 0
+push constant 512
+push constant 15
+sub
+push constant 256
+push constant 15
+sub
+push constant 10
+call Screen.drawCircle 3
+pop temp 0
 push local 12
 call Gameset.getPile1 1
 pop local 13
@@ -426,10 +424,8 @@ push local 13
 call Pile.getSZ 1
 pop local 5
 push local 4
-push constant 0
-eq
 push local 5
-or
+call Math.multiply 2
 push constant 0
 eq
 if-goto IF_TRUE20
@@ -438,6 +434,10 @@ label IF_TRUE20
 push constant 1
 pop local 8
 label IF_FALSE20
+push local 4
+push local 5
+call Gameset.drawCount 2
+pop temp 0
 push local 9
 push constant 1
 eq
@@ -479,16 +479,16 @@ goto IF_FALSE22
 label IF_TRUE22
 push constant 1
 pop local 11
+goto IF_END22
 label IF_FALSE22
-push local 5
-push constant 0
-eq
-if-goto IF_TRUE23
-goto IF_FALSE23
-label IF_TRUE23
 push constant 2
 pop local 11
-label IF_FALSE23
+label IF_END22
+call Screen.clearScreen 0
+pop temp 0
+push local 11
+call Gameset.drawWinScreen 1
+pop temp 0
 push constant 5000
 call sys.wait 1
 pop temp 0

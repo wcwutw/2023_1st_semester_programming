@@ -273,8 +273,6 @@ pop temp 0
 push constant 0
 return
 function Gameset.drawStartScreen 0
-push argument 0
-pop pointer 0
 call Screen.clearScreen 0
 pop temp 0
 push constant 10
@@ -357,8 +355,6 @@ pop temp 0
 push constant 0
 return
 function Gameset.drawPlayScreen 0
-push argument 0
-pop pointer 0
 call Screen.clearScreen 0
 pop temp 0
 push constant 31
@@ -409,5 +405,178 @@ push constant 250
 push constant 255
 call Screen.drawLine 4
 pop temp 0
+push constant 0
+return
+function Gameset.drawWinScreen 0
+push constant 60
+push constant 32
+call Math.multiply 2
+push constant 10
+add
+call DrawTool.drawW 1
+pop temp 0
+push constant 60
+push constant 32
+call Math.multiply 2
+push constant 12
+add
+call DrawTool.drawI 1
+pop temp 0
+push constant 60
+push constant 32
+call Math.multiply 2
+push constant 14
+add
+call DrawTool.drawN 1
+pop temp 0
+push constant 60
+push constant 32
+call Math.multiply 2
+push constant 16
+add
+call DrawTool.drawN 1
+pop temp 0
+push constant 60
+push constant 32
+call Math.multiply 2
+push constant 18
+add
+call DrawTool.drawE 1
+pop temp 0
+push constant 60
+push constant 32
+call Math.multiply 2
+push constant 20
+add
+call DrawTool.drawR 1
+pop temp 0
+push constant 31
+push constant 110
+push constant 469
+push constant 110
+call Screen.drawLine 4
+pop temp 0
+push constant 140
+push constant 32
+call Math.multiply 2
+push constant 2
+add
+push constant 4
+add
+call DrawTool.drawP 1
+pop temp 0
+push constant 140
+push constant 32
+call Math.multiply 2
+push constant 4
+add
+push constant 4
+add
+call DrawTool.drawL 1
+pop temp 0
+push constant 140
+push constant 32
+call Math.multiply 2
+push constant 6
+add
+push constant 4
+add
+call DrawTool.drawA 1
+pop temp 0
+push constant 140
+push constant 32
+call Math.multiply 2
+push constant 8
+add
+push constant 4
+add
+call DrawTool.drawY 1
+pop temp 0
+push constant 140
+push constant 32
+call Math.multiply 2
+push constant 10
+add
+push constant 4
+add
+call DrawTool.drawE 1
+pop temp 0
+push constant 140
+push constant 32
+call Math.multiply 2
+push constant 12
+add
+push constant 4
+add
+call DrawTool.drawR 1
+pop temp 0
+push argument 0
+push constant 1
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 140
+push constant 32
+call Math.multiply 2
+push constant 16
+add
+push constant 4
+add
+call DrawTool.drawO 1
+pop temp 0
+push constant 140
+push constant 32
+call Math.multiply 2
+push constant 18
+add
+push constant 4
+add
+call DrawTool.drawN 1
+pop temp 0
+push constant 140
+push constant 32
+call Math.multiply 2
+push constant 20
+add
+push constant 4
+add
+call DrawTool.drawE 1
+pop temp 0
+label IF_FALSE0
+push argument 0
+push constant 2
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 140
+push constant 32
+call Math.multiply 2
+push constant 16
+add
+push constant 4
+add
+call DrawTool.drawT 1
+pop temp 0
+push constant 140
+push constant 32
+call Math.multiply 2
+push constant 18
+add
+push constant 4
+add
+call DrawTool.drawW 1
+pop temp 0
+push constant 140
+push constant 32
+call Math.multiply 2
+push constant 20
+add
+push constant 4
+add
+call DrawTool.drawO 1
+pop temp 0
+label IF_FALSE1
 push constant 0
 return

@@ -90,6 +90,7 @@ class DrawCard{
 			do Screen.drawLine(x+30 , y , x+30 , y+21) ;				
 			do Screen.drawLine(x+30 , y+21 , x , y+21) ;
 			do Screen.drawLine(x+30 , y+21 , x+30 , y+41) ;
+			do Screen.drawLine(x, y, x, y+21);
 			do Screen.drawLine(x , y+41 , x+30 , y+41 ) ;
 			do Screen.drawLine(x , y , x , y);
 		}
