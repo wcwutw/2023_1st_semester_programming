@@ -106,17 +106,57 @@ class Gameset{
 	//set screen
 	function void drawStartScreen() {
 		do Screen.clearScreen();
-		do DrawTool.drawH(10*32+10);
-		do DrawTool.drawE(10*32+12);
-		do DrawTool.drawA(10*32+14);
-		do DrawTool.drawR(10*32+16);
-		do DrawTool.drawT(10*32+18);
-		do DrawTool.drawA(210*32+9);
-		do DrawTool.drawT(210*32+11);
-		do DrawTool.drawT(210*32+13);
-		do DrawTool.drawA(210*32+15);
-		do DrawTool.drawC(210*32+17);
-		do DrawTool.drawK(210*32+19);
+		do DrawTool.drawH(10*32+4);
+		do DrawTool.drawE(10*32+6);
+		do DrawTool.drawA(10*32+8);
+		do DrawTool.drawR(10*32+10);
+		do DrawTool.drawT(10*32+12);
+
+		do DrawTool.drawA(10*32+18);
+		do DrawTool.drawT(10*32+20);
+		do DrawTool.drawT(10*32+22);
+		do DrawTool.drawA(10*32+24);
+		do DrawTool.drawC(10*32+26);
+		do DrawTool.drawK(10*32+28);
+
+		do DrawTool.drawD(210 * 32 + 0) ;
+		do DrawTool.drawE(210 * 32 + 2) ;
+		do DrawTool.drawV(210 * 32 + 4) ;
+		do DrawTool.drawE(210 * 32 + 6) ;
+		do DrawTool.drawL(210 * 32 + 8) ;
+		do DrawTool.drawO(210 * 32 + 10) ;
+		do DrawTool.drawP(210 * 32 + 12) ;
+	
+		do Screen.drawCircle( 240 , 225 ,2 ) ;
+		do Screen.drawCircle( 240 , 235 ,2 ) ;
+
+		do DrawTool.drawW(210 * 32 + 16) ;
+		do DrawTool.drawU(210 * 32 + 18) ;
+		
+		do Screen.drawLine( 335 , 240 , 330 , 245 ) ;
+
+		do DrawTool.drawH(210 * 32 + 22) ;
+		do DrawTool.drawS(210 * 32 + 24) ;
+		do DrawTool.drawI(210 * 32 + 26) ;
+		do DrawTool.drawA(210 * 32 + 28) ;
+		do DrawTool.drawO(210 * 32 + 30) ;
+
+		do Screen.drawLine(250 , 100 , 200 , 75) ; 
+		do Screen.drawLine(250 , 100 , 300 , 75 ) ; 
+		do Screen.drawLine(200 , 75 , 150 , 100) ;
+		do Screen.drawLine(300 , 75 , 350 , 100) ;
+		do Screen.drawLine(150 , 100 , 150 , 150) ;
+		do Screen.drawLine(350 , 100 , 350 , 150) ;
+		do Screen.drawLine(350 , 150 , 250 , 200) ;
+		do Screen.drawLine(150 , 150 , 250 , 200) ;
+
+		do Screen.drawLine(50 , 125 + 10 , 230 , 125+ 10) ;
+		do Screen.drawLine(230 , 125 + 10, 240 , 150 + 10) ; 
+		do Screen.drawLine(240 , 150 + 10, 260 , 100 + 10) ; 
+		do Screen.drawLine(260 , 100 + 10, 275 , 125 + 10) ; 
+		do Screen.drawLine(275 , 125 + 10, 450 , 125 + 10) ;		
+
+
 		return;
 	}
 	function void drawPlayScreen() {
