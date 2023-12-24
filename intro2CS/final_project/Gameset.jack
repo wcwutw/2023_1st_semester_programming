@@ -104,7 +104,7 @@ class Gameset{
 		return;
 	}
 	//set screen
-	method void drawStartScreen() {
+	function void drawStartScreen() {
 		do Screen.clearScreen();
 		do DrawTool.drawH(10*32+10);
 		do DrawTool.drawE(10*32+12);
@@ -119,7 +119,7 @@ class Gameset{
 		do DrawTool.drawK(210*32+19);
 		return;
 	}
-	method void drawPlayScreen() {
+	function void drawPlayScreen() {
 		do Screen.clearScreen();
 		do Screen.drawRectangle(31, 138, 101, 250);
 		do Screen.drawRectangle(401, 10, 471, 132);
@@ -130,5 +130,39 @@ class Gameset{
 		do Screen.drawLine(250, 0, 250, 74);
 		do Screen.drawLine(250, 186, 250, 255);
 		return;
+	}
+	function void drawWinScreen(int player) {
+		do DrawTool.drawW(60*32+10);
+		do DrawTool.drawI(60*32+12);
+		do DrawTool.drawN(60*32+14);
+		do DrawTool.drawN(60*32+16);
+		do DrawTool.drawE(60*32+18);
+		do DrawTool.drawR(60*32+20);
+		
+		do Screen.drawLine(31, 110, 469, 110);
+
+		do DrawTool.drawP(140*32+2 + 4 );
+		do DrawTool.drawL(140*32+4 + 4 );
+		do DrawTool.drawA(140*32+6 + 4 );
+		do DrawTool.drawY(140*32+8 + 4 );
+		do DrawTool.drawE(140*32+10 + 4 );
+		do DrawTool.drawR(140*32+12 + 4 );
+
+		if ( player = 1 ) {
+			do DrawTool.drawO(140*32+16 + 4 );
+			do DrawTool.drawN(140*32+18 + 4 );
+			do DrawTool.drawE(140*32+20 + 4 );
+
+		}
+		if ( player = 2 ) {
+			do DrawTool.drawT(140*32+16 + 4 );
+			do DrawTool.drawW(140*32+18 + 4 );
+			do DrawTool.drawO(140*32+20 + 4 );
+
+		}
+		
+
+
+		return ;
 	}
 }
