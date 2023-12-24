@@ -160,15 +160,66 @@ class Gameset{
 		return;
 	}
 	function void drawPlayScreen() {
+		var int i ; 
 		do Screen.clearScreen();
-		do Screen.drawRectangle(31, 138, 101, 250);
-		do Screen.drawRectangle(401, 10, 471, 132);
+
+		// do Screen.drawRectangle(31, 138, 101, 250);
+		do Screen.drawLine(31 , 138 , 101 , 138) ;
+		do Screen.drawLine(31 , 138 , 31 , 250 ) ;
+		do Screen.drawLine(31 , 250 , 101 , 250) ;
+		do Screen.drawLine(101 , 138 , 101 , 250) ;		
+
+		let i = 0 ; 
+		while ( i < 71 ) {
+			do Screen.drawLine(101- i , 138 , 101 , 138 + i) ;
+			let i = i + 2 ;
+		}
+		let i = 0 ; 
+		while ( i < 42 ) {
+			do Screen.drawLine(31 , 138 + i , 101 , 208 + i) ;
+			let i = i + 2 ;
+		}
+		let i = 0 ; 
+		while (i < 71) {
+			do Screen.drawLine(31 , 250 - i , 31 + i , 250) ;
+			let i = i + 2 ;
+
+		}
+
+
+		//do Screen.drawRectangle(401, 10, 471, 122);
+		do Screen.drawLine(401 , 10 , 471 , 10) ; 
+		do Screen.drawLine(471 , 10 , 471 , 122) ; 
+		do Screen.drawLine(471 , 122 , 401 , 122) ;
+		do Screen.drawLine(401 , 122 , 401 , 10) ;
+
+		let i = 0 ; 
+		while ( i < 71 ) {
+			do Screen.drawLine(471- i , 10 , 471 , 10 + i) ;
+			let i = i + 2 ;
+		}
+		let i = 0 ; 
+		while ( i < 42 ) {
+			do Screen.drawLine(401 , 10 + i , 471 , 80 + i) ;
+			let i = i + 2 ;
+		}
+		let i = 0 ; 
+		while (i < 71) {
+			do Screen.drawLine(401 , 122 - i , 401 + i , 122) ;
+			let i = i + 2 ;
+
+		}
+
+
+
+
 		do Screen.drawLine(215, 74, 285, 74);
 		do Screen.drawLine(215, 74, 215, 186);
 		do Screen.drawLine(215, 186, 285, 186);
 		do Screen.drawLine(285, 74, 285, 186);
 		do Screen.drawLine(250, 0, 250, 74);
 		do Screen.drawLine(250, 186, 250, 255);
+
 		return;
 	}
 	function void drawWinScreen(int player) {
