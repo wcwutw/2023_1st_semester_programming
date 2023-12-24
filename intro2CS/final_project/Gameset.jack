@@ -79,6 +79,12 @@ class Gameset{
 		let sig1=Tool.mod(count1, 10);
 		let ten2=count2/10;
 		let sig2=Tool.mod(count2, 10);
+		if(ten1=1) {
+			let ten1=-1;
+		}
+		if(ten2=1) {
+			let ten2=-1;
+		}
 		if(sig1=1) {
 			let sig1=-1;
 		}

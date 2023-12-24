@@ -3,165 +3,210 @@ class Main{
 		//call other function
 
 		//variable set
-		var string find;
-		var string hello;
 		var char input_char;
+		var int round_type; //1:put card, 2:rush
 		var int input_ascii;
 		var int info;
 		var int pile1_cnt;
 		var int pile2_cnt;
-		var int common_cnt;
 		var int start_game;
 		var int round_count;
 		var int game_end;
 		var int cur_player;
+		var int excape;
 		var int winner;
 		var Gameset game;
 		var Pile temp_pile;
 		var int break_condition;
-		let find="find!";
-		let hello="hello";
 		let input_char=Keyboard.readChar();
 		let input_ascii=Tool.asciiCode(input_char); //press any button to set seed and start
 		do Random.setSeed(input_ascii);
 		let input_ascii=49;
-		while(true) {
-			//set screen into startpage
-			let game=Gameset.new(); 
-			do game.drawStartScreen();
-			while(~(input_ascii=32)) { // press space to start game
-				let input_char=Keyboard.readChar();
-				let input_ascii=Tool.asciiCode(input_char);
-			}
-			//set screen into game mode
-			//game initialization, reset variables
-			do game.drawPlayScreen();
-			let cur_player=1; //player 1 or 2
-			let round_count=1; //1~13
-			let game_end=0;
-			while(game_end=0) { 
-				let input_ascii=49;
-				if(cur_player=1) {
-					do Screen.setColor(true);
-					do Screen.drawCircle(15, 15, 10);
-					while(~(input_ascii=68)) {
-						let input_char=Keyboard.readChar();
-						let input_ascii=Tool.asciiCode(input_char);
+		//set screen into startpage
+		let game=Gameset.new(); 
+		do game.drawStartScreen();
+		while(~(input_ascii=32)) { // press space to start game
+			let input_char=Keyboard.readChar();
+			let input_ascii=Tool.asciiCode(input_char);
+		}
+		//set screen into game mode
+		//game initialization, reset variables
+		do game.drawPlayScreen();
+		let cur_player=1; //player 1 or 2
+		let round_count=1; //1~13
+		let game_end=0;
+		let pile1_cnt=26;
+		let pile2_cnt=26;
+		let round_type=1;
+		while(game_end=0) {
+			do Gameset.drawCount(pile1_cnt, pile2_cnt);
+			let input_ascii=49;
+			if(round_type=1) {
+				let break_condition=0;
+				while(break_condition=0) {
+					let input_char=Keyboard.readChar();
+					let input_ascii=Tool.asciiCode(input_char);
+					do Random.setSeed(input_ascii);
+					if(input_ascii=65) {
+						let break_condition=1;
 					}
-					//wait for D pressed
-					do game.removeTopCard(1);
-					//move top card in Pile_1 to Common_pile
-				}
-				else {
-					do Screen.setColor(true);
-					do Screen.drawCircle(512-15, 256-15, 10);
-					while(~(input_ascii=74)) { //38
-						let input_char=Keyboard.readChar();
-						let input_ascii=Tool.asciiCode(input_char);
+					if(input_ascii=68) {
+						let break_condition=1;
 					}
-					//wait for J pressed
-					do game.removeTopCard(2);
-					//move top card in Pile_2 to Common_pile
+					if(input_ascii=74) {
+						let break_condition=1;
+					}
+					if(input_ascii=76) {
+						let break_condition=1;
+					}
 				}
-				let temp_pile=game.getCommon();
-				let info=temp_pile.getback();
-				do DrawCard.cleanCard();
-				do DrawCard.draw(info);
+				let excape=0;
+				if(input_ascii=65) { //wrong!
+					do game.movePile(1);
+					//clear Common_pile to Pile_1
+					do game.shuffleAll();
+					//random shuffle Pile_1
+					let cur_player=1;
+					let round_count=1;
+					do DrawCard.cleanCard();
+					let excape=1;
+				}
+				if(input_ascii=76) { //wrong! 
+					do game.movePile(2);
+					//clear Common_pile to Pile_2
+					do game.shuffleAll();
+					//random shuffle Pile_2
+					let cur_player=2;
+					let round_count=1;
+					do DrawCard.cleanCard();
+					let excape=1;
+				}
+				if(excape=0) {
+					if(cur_player=1) { //need to add card
+						while(~(input_ascii=68)) {
+							let input_char=Keyboard.readChar();
+							let input_ascii=Tool.asciiCode(input_char);
+						}
+						//wait for D pressed
+						do game.removeTopCard(1);
+						//move top card in Pile_1 to Common_pile
+						let cur_player=2;
+					}
+					else {
+						while(~(input_ascii=74)) {
+							let input_char=Keyboard.readChar();
+							let input_ascii=Tool.asciiCode(input_char);
+						}
+						//wait for J pressed
+						do game.removeTopCard(2);
+						//move top card in Pile_2 to Common_pile
+						let cur_player=1;
+					}
+					let temp_pile=game.getCommon();
+					let info=temp_pile.getback();
+					do DrawCard.cleanCard();
+					do DrawCard.draw(info);
+					let info=Tool.mod(info, 13);
+					if(info=0) {
+						let info=13;
+					}
+					let input_ascii=49;
+					if(info=round_count) {
+						let round_type=2;
+					}
+					else {
+						let round_count=round_count+1;
+						if(round_count>13) {
+							let round_count=round_count-13;
+						}
+					}	 
+				}
 				do Screen.setColor(false);
 				do Screen.drawCircle(15, 15, 10);
 				do Screen.drawCircle(512-15, 256-15, 10);
-				let info=Tool.mod(info, 13);
-				if(info=0) {
-					let info=13;
-				}
-				do Output.printInt(info);
-				do Output.printInt(round_count);
-				let input_ascii=49;
-				if(info=round_count) {
-					let break_condition=0;
-					while(break_condition=0) {
-						let input_char=Keyboard.readChar();
-						let input_ascii=Tool.asciiCode(input_char);
-						do Random.setSeed(input_ascii);
-						if(input_ascii=65) {
-							let break_condition=1;
-						}
-						if(input_ascii=68) {
-							let break_condition=1;
-						}
-						if(input_ascii=74) {
-							let break_condition=1;
-						}
-						if(input_ascii=76) {
-							let break_condition=1;
-						}
-					}
-					//wait for A/L/D/J pressed
+			}
+			else { //info=round_count
+				let break_condition=0;
+				while(break_condition=0) {
+					let input_char=Keyboard.readChar();
+					let input_ascii=Tool.asciiCode(input_char);
+					do Random.setSeed(input_ascii);
 					if(input_ascii=65) {
-						do game.movePile(2);
-						//clear Common_pile to Pile_2
-						do game.shuffleAll();
-						//random shuffle Pile_2
+						let break_condition=1;
 					}
-					if(input_ascii=76) {
-						do game.movePile(1);
-						//clear Common_pile to Pile_1
-						do game.shuffleAll();
-						//random shuffle Pile_1
-					}
-					//if D/J is pressed accidentally
-					let round_count=1;
 					if(input_ascii=68) {
-						do game.movePile(1);
-						//clear Common_pile to Pile_1
-						do game.shuffleAll();
-						//random shuffle Pile_1
+						let break_condition=1;
 					}
 					if(input_ascii=74) {
-						do game.movePile(2);
-						//clear Common_pile to Pile_2
-						do game.shuffleAll();
-						//random shuffle Pile_2
+						let break_condition=1;
+					}
+					if(input_ascii=76) {
+						let break_condition=1;
 					}
 				}
-				else {
-					let round_count=round_count+1;
-					if(round_count>13) {
-						let round_count=round_count-13;
-					}
-				} 
-				//if A/L is pressed accidentally, nothing happen
-				let temp_pile=game.getPile1();
-				let pile1_cnt=temp_pile.getSZ();
-				let temp_pile=game.getPile2();
-				let pile2_cnt=temp_pile.getSZ();
-				let temp_pile=game.getCommon();
-				let common_cnt=temp_pile.getSZ();
-				//do Output.printInt(pile1_cnt);
-				//do Output.printInt(pile2_cnt);
-				//do Output.printInt(common_cnt);
-				//do Output.printInt(round_count);
-				//do Output.println();
-				//update both Pile_count
-				//draw something
-				do Gameset.drawCount(pile1_cnt, pile2_cnt);
-				//show Pile_count, round_count
-				let cur_player=3-cur_player;
-				if(pile1_cnt=0 | pile2_cnt=0) {
-					let game_end=1;
+				//wait for A/L/D/J pressed
+				if(input_ascii=65) {
+					do game.movePile(2);
+					//clear Common_pile to Pile_2
+					do game.shuffleAll();
+					//random shuffle Pile_2
+					let cur_player=2;
 				}
-				//game_end->play final round? if have time i can implement this part
-				//middle=full but game not end			
+				if(input_ascii=76) {
+					do game.movePile(1);
+					//clear Common_pile to Pile_1
+					do game.shuffleAll();
+					//random shuffle Pile_1
+					let cur_player=1;
+				}
+				let round_count=1;
+				let round_type=1;
+				if(input_ascii=68) { //wrong!
+					do game.movePile(1);
+					//clear Common_pile to Pile_1
+					do game.shuffleAll();
+					//random shuffle Pile_1
+					let cur_player=1;
+				}
+				if(input_ascii=74) { //wrong!
+					do game.movePile(2);
+					//clear Common_pile to Pile_2
+					do game.shuffleAll();
+					//random shuffle Pile_2
+					let cur_player=2;
+				}
+				do DrawCard.cleanCard();
 			}
-			if(pile1_cnt=0) {
-				let winner=1; //show player_1 win
+			let temp_pile=game.getPile1();
+			let pile1_cnt=temp_pile.getSZ();
+			let temp_pile=game.getPile2();
+			let pile2_cnt=temp_pile.getSZ();
+			//do Output.printInt(pile1_cnt);
+			//do Output.printInt(pile2_cnt);
+			//do Output.printInt(round_count);
+			//do Output.println();
+			//update both Pile_count
+			if(pile1_cnt=0 | pile2_cnt=0) {
+				let game_end=1;
 			}
-			if(pile2_cnt=0) {
-				let winner=2; //show player_2 win
+			if(cur_player=1) {
+				do Screen.setColor(true);
+				do Screen.drawCircle(15, 15, 10);
 			}
-			do Output.printInt(winner);
-			do sys.wait(2000); //2000ms
+			else {
+				do Screen.setColor(true);
+				do Screen.drawCircle(512-15, 256-15, 10);
+			}
 		}
+		if(pile1_cnt=0) {
+			let winner=1; //show player_1 win
+		
+		}
+		if(pile2_cnt=0) {
+			let winner=2; //show player_2 win
+		
+		}
+		do sys.wait(5000); //2000ms
 		return;
 	}
 }

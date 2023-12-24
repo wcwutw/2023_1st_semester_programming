@@ -3,10 +3,10 @@ class DrawCard{
 		var int color_index , card_index ;
 		do Screen.setColor(true);
 		
-		do Screen.drawLine(215 , 74 , 285 , 74) ;
-		do Screen.drawLine(215 , 74 , 215 , 186) ;
-		do Screen.drawLine(215 , 186 , 285 , 186) ;
-		do Screen.drawLine(285 , 74 , 285 , 186) ;
+		//do Screen.drawLine(215 , 74 , 285 , 74) ;
+		//do Screen.drawLine(215 , 74 , 215 , 186) ;
+		//do Screen.drawLine(215 , 186 , 285 , 186) ;
+		//do Screen.drawLine(285 , 74 , 285 , 186) ;
 		let color_index = (index - 1)/13 +1;
 		let card_index =index+13-(color_index * 13) ;
 
@@ -18,18 +18,21 @@ class DrawCard{
 	}
 	function void cleanCard() {
 		do Screen.setColor(false);
-		do Screen.drawRectangle(215, 74, 285, 186);
+		do Screen.drawRectangle(216, 75, 284, 185);
 		return;
 	}
 	function void drawNumber(int value, int x, int y) {
 		do Screen.setColor(true);
+		if(value=-1) { //draw 1
+			do Screen.drawLine(x+30, y, x+30, y+41);
+		}
 		if(value=0) {
 			do Screen.drawLine(x , y , x+30 , y) ;
 			do Screen.drawLine(x+30 , y , x+30 , y+41) ;				
 			do Screen.drawLine(x , y+41 , x+30 , y+41) ;
 			do Screen.drawLine(x , y , x , y+41) ;
 		}
-		if ( value = 1 ) {
+		if ( value = 1 ) { //draw A
 			do Screen.drawLine( x+15 , y , x , y+41 ) ;
 			do Screen.drawLine( x+15 , y , x+30 , y+41 ) ;
 			do Screen.drawLine( x+8 , y+21 , x+23 , y+21 ) ;
