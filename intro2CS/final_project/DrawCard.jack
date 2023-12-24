@@ -130,27 +130,47 @@ class DrawCard{
 		}
 		if ( type = 3 ) {
 			//diamond
-			do Screen.drawLine(250 , 82 , 270 , 102) ;
-			do Screen.drawLine(249 , 83 , 269 , 103) ;
-			do Screen.drawLine(248 , 84 , 268 , 104) ;
-			do Screen.drawLine(247 , 85 , 267 , 105) ;
-			do Screen.drawLine(246 , 86 , 266 , 106) ;
-			do Screen.drawLine(245 , 87 , 265 , 107) ;
-			do Screen.drawLine(244 , 88 , 264 , 108) ;
-			do Screen.drawLine(243 , 89 , 263 , 109) ;
-			do Screen.drawLine(242 , 90 , 262 , 110) ;
-			do Screen.drawLine(241 , 91 , 261 , 111) ;
-			do Screen.drawLine(240 , 92 , 260 , 112) ;
-			do Screen.drawLine(239 , 93 , 259 , 113) ;
-			do Screen.drawLine(238 , 94 , 258 , 114) ;
-			do Screen.drawLine(237 , 95 , 257 , 115) ;
-			do Screen.drawLine(236 , 96 , 256 , 116) ;
-			do Screen.drawLine(235 , 97 , 255 , 117) ;
-			do Screen.drawLine(234 , 98 , 254 , 118) ;
-			do Screen.drawLine(233 , 99 , 253 , 119) ;
-			do Screen.drawLine(232 , 100 , 252 , 120) ;
-			do Screen.drawLine(231 , 101 , 251 , 121) ;
-			do Screen.drawLine(230 , 102 , 250 , 122) ;
+			do Screen.drawLine(250 , 82 , 250 , 82) ;
+			do Screen.drawLine(249 , 83 , 251 , 83) ;
+			do Screen.drawLine(248 , 84 , 252 , 84) ;
+			do Screen.drawLine(247 , 85 , 253 , 85) ;
+			do Screen.drawLine(246 , 86 , 254 , 86) ;
+			do Screen.drawLine(245 , 87 , 255 , 87) ;
+			do Screen.drawLine(244 , 88 , 256 , 88) ;
+			do Screen.drawLine(243 , 89 , 257 , 89) ;
+			do Screen.drawLine(242 , 90 , 258 , 90) ;
+			do Screen.drawLine(241 , 91 , 259 , 91) ;
+			do Screen.drawLine(240 , 92 , 260 , 92) ;
+			do Screen.drawLine(239 , 93 , 261 , 93) ;
+			do Screen.drawLine(238 , 94 , 262 , 94) ;
+			do Screen.drawLine(237 , 95 , 263 , 95) ;
+			do Screen.drawLine(236 , 96 , 264 , 96) ;
+			do Screen.drawLine(235 , 97 , 265 , 97) ;
+			do Screen.drawLine(234 , 98 , 266 , 98) ;
+			do Screen.drawLine(233 , 99 , 267 , 99) ;
+			do Screen.drawLine(232 , 100 , 268 , 100) ;
+			do Screen.drawLine(231 , 101 , 269 , 101) ;
+			do Screen.drawLine(230 , 102 , 270 , 102) ;
+			do Screen.drawLine(231 , 103 , 269 , 103) ;
+			do Screen.drawLine(232 , 104 , 268 , 104) ;
+			do Screen.drawLine(233 , 105 , 267 , 105) ;
+			do Screen.drawLine(234 , 106 , 266 , 106) ;
+			do Screen.drawLine(235 , 107 , 265 , 107) ;
+			do Screen.drawLine(236 , 108 , 264 , 108) ;
+			do Screen.drawLine(237 , 109 , 263 , 109) ;
+			do Screen.drawLine(238 , 110 , 262 , 110) ;
+			do Screen.drawLine(239 , 111 , 261 , 111) ;
+			do Screen.drawLine(240 , 112 , 260 , 112) ;
+			do Screen.drawLine(241 , 113 , 259 , 113) ;
+			do Screen.drawLine(242 , 114 , 258 , 114) ;
+			do Screen.drawLine(243 , 115 , 257 , 115) ;
+			do Screen.drawLine(244 , 116 , 256 , 116) ;
+			do Screen.drawLine(245 , 117 , 255 , 117) ;
+			do Screen.drawLine(246 , 118 , 254 , 118) ;
+			do Screen.drawLine(247 , 119 , 253 , 119) ;
+			do Screen.drawLine(248 , 120 , 252 , 120) ;
+			do Screen.drawLine(249 , 121 , 251 , 121) ;
+			do Screen.drawLine(250 , 122 , 250 , 122) ;
 		
 		}
 		if ( type = 2 ) {
