@@ -79,6 +79,12 @@ class Gameset{
 		let sig1=Tool.mod(count1, 10);
 		let ten2=count2/10;
 		let sig2=Tool.mod(count2, 10);
+		if(sig1=1) {
+			let sig1=-1;
+		}
+		if(sig2=1) {
+			let sig2=-1;
+		}
 		do Screen.setColor(false);
 		do Screen.drawRectangle(31, 87, 101, 128);
 		do Screen.setColor(true);
