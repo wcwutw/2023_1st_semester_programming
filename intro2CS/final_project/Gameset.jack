@@ -2,10 +2,9 @@ class Gameset{
 	field Pile player_1;
 	field Pile player_2;
 	field Pile common;
-	field int random_seed;
-	field int sz;
 	constructor Gameset new() {
 		var int i;
+		var int random_seed;
 		let i=52;
 		let player_1=Pile.new();
 		let player_2=Pile.new();
@@ -30,6 +29,7 @@ class Gameset{
 	method void movePile(int type) {
 		//type1: common->1
 		//type2: common->2
+		var int sz;
 		let sz=common.getSZ();
 		while(~(sz=0)) {
 			if(type=1) {

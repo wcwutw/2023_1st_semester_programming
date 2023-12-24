@@ -4,6 +4,8 @@ pop local 0
 push local 0
 call Tool.asciiCode 1
 pop local 2
+call Output.println 0
+pop temp 0
 push local 2
 call Random.setSeed 1
 pop temp 0
@@ -25,6 +27,8 @@ pop local 0
 push local 0
 call Tool.asciiCode 1
 pop local 2
+call Output.println 0
+pop temp 0
 goto WHILE_EXP0
 label WHILE_END0
 call Gameset.drawPlayScreen 0
@@ -72,6 +76,8 @@ pop local 0
 push local 0
 call Tool.asciiCode 1
 pop local 2
+call Output.println 0
+pop temp 0
 push local 2
 call Random.setSeed 1
 pop temp 0
@@ -183,6 +189,8 @@ pop local 0
 push local 0
 call Tool.asciiCode 1
 pop local 2
+call Output.println 0
+pop temp 0
 goto WHILE_EXP3
 label WHILE_END3
 push local 12
@@ -205,6 +213,8 @@ pop local 0
 push local 0
 call Tool.asciiCode 1
 pop local 2
+call Output.println 0
+pop temp 0
 goto WHILE_EXP4
 label WHILE_END4
 push local 12
@@ -282,6 +292,8 @@ pop local 0
 push local 0
 call Tool.asciiCode 1
 pop local 2
+call Output.println 0
+pop temp 0
 push local 2
 call Random.setSeed 1
 pop temp 0

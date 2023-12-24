@@ -1,14 +1,7 @@
 class Pile{
 	field Array arr;
 	field int arr_sz;
-	field int rem;
-	field int shuffle_times;
-	field int left_id;
-	field int right_id;
-	field int swap_tmp;
 	constructor Pile new() {
-		//return null list;
-		//do arr.dispose();
 		let arr=Array.new(52);
 		let arr_sz=0;
 		return this;
@@ -17,24 +10,6 @@ class Pile{
 		let arr[arr_sz]=add;
 		let arr_sz=arr_sz+1;
 		return;
-	}
-	//method int removeCard() {
-	//	let arr_sz = arr_sz - 1;
-	//	let rem=arr[arr_sz];
-	//	let arr[arr_sz]=0;
-	//	return rem;
-	//}
-	method void printArr() {
-		var int i;
-		let i=0;
-		while(i<arr_sz) {
-			do Output.printInt(arr[i]);
-		}
-		do Output.println();
-		return;
-	}
-	method Array getArr() {
-		return arr;
 	}
 	method int getSZ() {
 		return arr_sz;
@@ -48,7 +23,11 @@ class Pile{
 		return;
 	}
 	method void shufflePile() {
-		let shuffle_times=26;
+		var int swap_tmp;
+		var int shuffle_times;
+		var int left_id;
+		var int right_id;
+		let shuffle_times=52;
 		do Random.setSeed(9487-arr[0]);
 		while(shuffle_times>0) {
 			let left_id=Random.rand();

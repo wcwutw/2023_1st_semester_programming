@@ -29,26 +29,3 @@ goto WHILE_EXP0
 label WHILE_END0
 push argument 0
 return
-function Tool.rnd 3
-call Random.rand 0
-pop local 0
-push argument 1
-push argument 0
-sub
-pop local 2
-push local 0
-push argument 1
-push argument 0
-sub
-push constant 1
-add
-call Tool.mod 2
-pop local 1
-push local 1
-push argument 0
-add
-pop local 0
-push local 0
-push local 1
-add
-return
