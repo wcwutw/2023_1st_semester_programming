@@ -10,9 +10,9 @@ Team practice for ICPC Taoyuan. Only store the codes that were written by me. Wo
 The homework and final project in the course "Introduction to Computer Science", the final report is completed together with @AAAA-source.
 
 ## judgegirl
-The code as a tester in the course "Introduction to Computer Programming", judge(https://judgegirl.csie.org/login, should be connected to NTU's VPN).
+The code as a tester in the course "Introduction to Computer Programming", judge(https://judgegirl.csie.org/login, need to be connected to NTU's VPN).
 
 ## ELSE
 I also work as a tester in NHSPC mock contest (https://codeforces.com/gym/104830) and a problemsetter for IOICamp 2024 (https://ioicamp.org/).
 
-Some blanks look weird since I use both vim and Codeblocks to type. I would use vim and VS code instead next semester.
+Some blanks in code look weird since I use both vim and Codeblocks to type. I would use vim and VS code instead next semester.
